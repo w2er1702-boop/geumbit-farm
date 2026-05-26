@@ -1,0 +1,96 @@
+{
+  "company": {
+    "ko": "한여울바이오밸리㈜",
+    "en": "HANYEOUL BIO VALLEY CO., LTD.",
+    "zh": "韩如月生物谷株式会社"
+  },
+  "brandName": {
+    "ko": "금빛농원",
+    "en": "GEUMBIT FARM",
+    "zh": "金光农园"
+  },
+  "story": {
+    "ko": [
+      "금빛농원은 경기도 연천, 한탄강 자락에서 황금상황버섯을 재배하는 농장입니다. 운영 법인 한여울바이오밸리㈜는 청정 재배지의 흙과 물, 그리고 참나무 원목이 만들어내는 자연 그대로의 결을 가장 중요한 자산으로 여깁니다.",
+      "‘금빛’은 자연이 오랜 시간을 들여 내려준 황금빛 결실을 의미합니다. 농원은 짧은 효율보다 길게 익히는 시간을 선택해 왔습니다.",
+      "농장 시작 배경 텍스트를 이곳에 채워주세요. (placeholder)"
+    ],
+    "en": [
+      "Geumbit Farm cultivates golden sanghwang mushrooms along the Hantangang River in Yeoncheon, Gyeonggi. Our operating entity, Hanyeoul Bio Valley Co., Ltd., treats the soil, water, and oak logs of this clean growing region as our most important assets.",
+      "‘Geumbit’ means the golden hue that nature grants over long stretches of time. The farm has chosen the slower path of long-aged maturation over short-term efficiency.",
+      "Please fill in the founding background text here. (placeholder)"
+    ],
+    "zh": [
+      "金光农园位于京畿道涟川的汉滩江畔，专注于栽培黄金桑黄。运营公司韩如月生物谷株式会社将清净产地的水土与橡木原木的天然纹理视为最重要的资产。",
+      "「金光」象征着自然历经长久岁月所赋予的金色果实。农园选择了长时间熟成的路径，而非短期效率。",
+      "请在此处填入农场创立背景文本。（placeholder）"
+    ]
+  },
+  "principles": [
+    {
+      "hanja": "潔",
+      "title": { "ko": "유기농 인증 원료", "en": "Certified Organic", "zh": "有机认证原料" },
+      "desc": {
+        "ko": "농약·화학비료를 사용하지 않은 유기 재배를 원칙으로 합니다.",
+        "en": "We adhere to organic cultivation free of pesticides and chemical fertilizers.",
+        "zh": "坚持不使用农药与化肥的有机栽培。"
+      }
+    },
+    {
+      "hanja": "木",
+      "title": { "ko": "참나무 원목 자연배양", "en": "Natural Oak-Log Cultivation", "zh": "橡木原木自然栽培" },
+      "desc": {
+        "ko": "참나무 원목 위에서 시간을 들여 자연 배양합니다.",
+        "en": "Cultivated naturally on oak logs over long stretches of time.",
+        "zh": "在橡木原木上经长时间自然栽培。"
+      }
+    },
+    {
+      "hanja": "鮮",
+      "title": { "ko": "당일 수확 당일 가공", "en": "Harvest-Day Processing", "zh": "当日采收当日加工" },
+      "desc": {
+        "ko": "수확한 당일 가공해 결의 손상을 최소화합니다.",
+        "en": "Processed on the same day to minimize loss of texture and quality.",
+        "zh": "采收当日即加工，最大程度保留品质。"
+      }
+    }
+  ],
+  "farm": {
+    "location": {
+      "ko": "경기도 연천군 한탄강 인근",
+      "en": "Near the Hantangang River, Yeoncheon-gun, Gyeonggi-do",
+      "zh": "京畿道涟川郡汉滩江附近"
+    },
+    "description": {
+      "ko": "연천 한탄강 일대는 현무암 협곡이 만들어낸 미네랄 풍부한 토양과 깨끗한 수질을 가진 청정지역입니다. 사계절이 뚜렷한 기후 아래 참나무 원목에서 황금상황버섯이 천천히 결을 쌓아갑니다.",
+      "en": "The Hantangang River region of Yeoncheon is a pristine area shaped by basalt gorges, with mineral-rich soils and clean waters. Golden sanghwang slowly builds its texture on oak logs under the region's four distinct seasons.",
+      "zh": "涟川汉滩江一带是由玄武岩峡谷形成的清净地带，拥有矿物丰富的土壤与洁净水源。在四季分明的气候下，黄金桑黄在橡木原木上缓慢生长。"
+    }
+  },
+  "heritage": [
+    {
+      "title": { "ko": "연천 한탄강 청정 재배지", "en": "Pristine Hantangang Site", "zh": "汉滩江清净产地" },
+      "desc": {
+        "ko": "현무암 협곡과 맑은 물이 흐르는 청정 지역",
+        "en": "Basalt gorges and pristine waters",
+        "zh": "玄武岩峡谷与清澈水源"
+      }
+    },
+    {
+      "title": { "ko": "참나무 원목 자연배양", "en": "Natural Oak-Log Growing", "zh": "橡木原木自然培育" },
+      "desc": {
+        "ko": "기계 배양이 아닌 원목 위 자연 결",
+        "en": "Natural grain on oak logs, not machine-grown",
+        "zh": "于橡木原木上天然纹理生长"
+      }
+    },
+    {
+      "title": { "ko": "20년 농장 경력", "en": "20 Years of Farming", "zh": "二十年农场经验" },
+      "desc": {
+        "ko": "한 세대의 시간이 깃든 재배 노하우",
+        "en": "Two decades of cultivation know-how",
+        "zh": "凝聚一代人时光的栽培经验"
+      }
+    }
+  ]
+}

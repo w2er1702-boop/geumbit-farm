@@ -1,0 +1,184 @@
+[
+  {
+    "slug": "oak-sanghwang-30g",
+    "category": "원물",
+    "name": {
+      "ko": "농장직송 국산 유기농 참나무 상황버섯 30g",
+      "en": "Farm-Direct Organic Oak Sanghwang Mushroom 30g",
+      "zh": "农场直送 国产有机橡木桑黄 30克"
+    },
+    "shortDesc": {
+      "ko": "참나무 원목에서 자란 황금상황버섯 입문 용량",
+      "en": "Entry-size oak-grown sanghwang mushroom",
+      "zh": "橡木原木栽培桑黄入门规格"
+    },
+    "weight": "30g",
+    "regularPrice": 14000,
+    "salePrice": 12000,
+    "image": "/products/oak-sanghwang-30g.jpg",
+    "naverProductNo": "5278026194",
+    "sixshopSlug": ""
+  },
+  {
+    "slug": "oak-sanghwang-100g",
+    "category": "원물",
+    "name": {
+      "ko": "농장직송 국산 유기농 참나무 상황버섯 100g",
+      "en": "Farm-Direct Organic Oak Sanghwang Mushroom 100g",
+      "zh": "农场直送 国产有机橡木桑黄 100克"
+    },
+    "shortDesc": {
+      "ko": "넉넉한 100g, 가정 상비 용량",
+      "en": "Ample 100g household supply",
+      "zh": "充足100克 家庭常备规格"
+    },
+    "weight": "100g",
+    "regularPrice": 47500,
+    "salePrice": 38000,
+    "image": "/products/oak-sanghwang-100g.jpg",
+    "naverProductNo": "5340080202",
+    "sixshopSlug": ""
+  },
+  {
+    "slug": "golden-sanghwang-slice-250g",
+    "category": "슬라이스",
+    "name": {
+      "ko": "유기농 황금상황버섯 슬라이스 250g",
+      "en": "Organic Golden Sanghwang Sliced 250g",
+      "zh": "有机黄金桑黄切片 250克"
+    },
+    "shortDesc": {
+      "ko": "한탄강 무농약 재배, 차로 우려내기 좋은 슬라이스",
+      "en": "Hantangang pesticide-free slices ideal for brewing tea",
+      "zh": "汉滩江无农药栽培 适合泡茶的切片"
+    },
+    "weight": "250g",
+    "regularPrice": 125000,
+    "salePrice": 97500,
+    "image": "/products/golden-sanghwang-slice-250g.jpg",
+    "naverProductNo": "5698323054",
+    "sixshopSlug": ""
+  },
+  {
+    "slug": "golden-sanghwang-whole-250g",
+    "category": "원물",
+    "name": {
+      "ko": "유기농 황금상황버섯 원물 250g",
+      "en": "Organic Golden Sanghwang Whole 250g",
+      "zh": "有机黄金桑黄原物 250克"
+    },
+    "shortDesc": {
+      "ko": "황금빛이 진하게 도는 자연 그대로의 원물",
+      "en": "Whole mushroom with deep golden hue, as harvested",
+      "zh": "黄金色泽浓郁的天然原物"
+    },
+    "weight": "250g",
+    "regularPrice": 125000,
+    "salePrice": 97500,
+    "image": "/products/golden-sanghwang-whole-250g.jpg",
+    "naverProductNo": "5340102366",
+    "sixshopSlug": ""
+  },
+  {
+    "slug": "golden-sanghwang-jinaek",
+    "category": "진액",
+    "name": {
+      "ko": "유기농 황금상황버섯 진액 90ml × 30포",
+      "en": "Organic Golden Sanghwang Extract 90ml × 30 pouches",
+      "zh": "有机黄金桑黄进液 90毫升 × 30包"
+    },
+    "shortDesc": {
+      "ko": "한 달 분량, 바로 마시는 진액 파우치",
+      "en": "One-month supply, ready-to-drink pouches",
+      "zh": "一个月用量 即饮包装"
+    },
+    "weight": "90ml × 30포",
+    "regularPrice": 140000,
+    "salePrice": 112000,
+    "image": "/products/golden-sanghwang-jinaek.jpg",
+    "naverProductNo": "9618082831",
+    "sixshopSlug": "",
+    "featured": true
+  },
+  {
+    "slug": "sanghwang-set-500g",
+    "category": "세트",
+    "name": {
+      "ko": "상황버섯 원물+슬라이스 세트 500g",
+      "en": "Sanghwang Whole + Sliced Set 500g",
+      "zh": "桑黄原物+切片 套装 500克"
+    },
+    "shortDesc": {
+      "ko": "원물과 슬라이스를 함께, 선물용 추천",
+      "en": "Whole and sliced together, recommended as a gift",
+      "zh": "原物与切片同享 推荐送礼"
+    },
+    "weight": "500g (원물+슬라이스)",
+    "regularPrice": 240000,
+    "salePrice": 189600,
+    "image": "/products/sanghwang-set-500g.jpg",
+    "naverProductNo": "5698311824",
+    "sixshopSlug": ""
+  },
+  {
+    "slug": "golden-sanghwang-whole-500g",
+    "category": "원물",
+    "name": {
+      "ko": "유기농 황금상황버섯 원물 500g",
+      "en": "Organic Golden Sanghwang Whole 500g",
+      "zh": "有机黄金桑黄原物 500克"
+    },
+    "shortDesc": {
+      "ko": "장기 상비 원물, 황금색 진한 등급",
+      "en": "Long-term supply whole-form, deep golden grade",
+      "zh": "长期常备原物 浓郁金色"
+    },
+    "weight": "500g",
+    "regularPrice": 240000,
+    "salePrice": 189600,
+    "image": "/products/golden-sanghwang-whole-500g.jpg",
+    "naverProductNo": "5698300321",
+    "sixshopSlug": ""
+  },
+  {
+    "slug": "golden-sanghwang-slice-500g",
+    "category": "슬라이스",
+    "name": {
+      "ko": "유기농 황금상황버섯 슬라이스 500g",
+      "en": "Organic Golden Sanghwang Sliced 500g",
+      "zh": "有机黄金桑黄切片 500克"
+    },
+    "shortDesc": {
+      "ko": "넉넉한 슬라이스 대용량, 가족 상비",
+      "en": "Generous sliced volume for family supply",
+      "zh": "充足切片大容量 家庭常备"
+    },
+    "weight": "500g",
+    "regularPrice": 240000,
+    "salePrice": 189600,
+    "image": "/products/golden-sanghwang-slice-500g.jpg",
+    "naverProductNo": "5697907443",
+    "sixshopSlug": ""
+  },
+  {
+    "slug": "golden-sanghwang-fermented",
+    "category": "발효액",
+    "name": {
+      "ko": "유기농 황금상황버섯 발효액 1박스",
+      "en": "Organic Golden Sanghwang Fermented Extract — 1 Box",
+      "zh": "有机黄金桑黄发酵液 1盒"
+    },
+    "shortDesc": {
+      "ko": "장기 발효를 거친 프리미엄 발효액",
+      "en": "Premium long-fermented extract",
+      "zh": "经长期发酵的高级发酵液"
+    },
+    "weight": "1박스",
+    "regularPrice": 275000,
+    "salePrice": 220000,
+    "image": "/products/golden-sanghwang-fermented.jpg",
+    "naverProductNo": "5082878950",
+    "sixshopSlug": "",
+    "featured": true
+  }
+]

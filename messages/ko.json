@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "홈",
+    "brand": "브랜드 스토리",
+    "products": "상품",
+    "farm": "농장",
+    "certifications": "인증",
+    "contact": "문의"
+  },
+  "actions": {
+    "buyNow": "구매하기",
+    "learnMore": "자세히 보기",
+    "inquire": "문의하기",
+    "viewAllProducts": "전체 상품 보기",
+    "brandStory": "브랜드 스토리"
+  },
+  "common": {
+    "regularPrice": "정가",
+    "salePrice": "판매가",
+    "weight": "용량",
+    "category": "카테고리",
+    "all": "전체",
+    "comingSoon": "이미지 준비 중",
+    "relatedProducts": "관련 상품"
+  },
+  "home": {
+    "wordmark": "GEUMBIT FARM",
+    "brandKo": "금빛농원",
+    "heroSlogan": "한탄강 자락, 스무 해를 자란 황금",
+    "brandLeadHeading": "BRAND",
+    "brandLeadTitle": "오래 익힌 결, 자연이 내려준 황금빛",
+    "brandLeadBody": "금빛농원은 한탄강 자락에서 참나무 원목 위에 황금상황버섯을 자연 그대로 길러냅니다. 빠른 효율 대신 오래 기다리는 시간을 택해 왔습니다.",
+    "featuredHeading": "SIGNATURE",
+    "featuredTitle": "대표 상품",
+    "heritageHeading": "HERITAGE",
+    "b2bHeading": "PARTNERS",
+    "b2bTitle": "국내 굴지의 건강식품 기업 원물 공급 파트너",
+    "b2bBody": "오랜 시간 검증된 품질의 황금상황버섯 원물을 국내 주요 건강식품 기업에 공급해 왔습니다.",
+    "ctaHeading": "전체 상품을 만나보세요",
+    "ctaBody": "9종의 상황버섯 원물·슬라이스·진액·발효액을 둘러볼 수 있습니다."
+  },
+  "brand": {
+    "title": "BRAND STORY",
+    "subtitle": "금빛농원이 걸어온 길",
+    "companyLabel": "운영 법인",
+    "principlesHeading": "품질 철학",
+    "principlesTitle": "세 가지 원칙"
+  },
+  "products": {
+    "title": "PRODUCTS",
+    "subtitle": "황금상황버섯 9선",
+    "intro": "원물부터 진액, 발효액까지. 한탄강의 시간이 담긴 라인업."
+  },
+  "product": {
+    "aboutHeading": "이 상품에 대하여",
+    "aboutBody": "한탄강 자락 청정 재배지에서 참나무 원목 위에 자연 배양한 황금상황버섯입니다. 일반 가공식품 표시 가이드에 따라 효능에 관한 단정 표현은 사용하지 않습니다.",
+    "storageHeading": "보관 및 섭취 방법",
+    "storageBody": "직사광선을 피해 서늘하고 건조한 곳에 보관하세요. 개봉 후에는 밀폐하여 가급적 빠르게 드시는 것을 권장합니다.",
+    "cautionHeading": "주의사항",
+    "cautionBody": "본 제품은 일반 식품이며, 의약품이 아닙니다. 임산부·수유부·특정 질환 치료 중인 분은 섭취 전 전문가와 상담하시기 바랍니다. 표시·광고 가이드에 따라 의약품적 효능 단정 표현은 제공하지 않습니다."
+  },
+  "farm": {
+    "title": "FARM",
+    "subtitle": "연천 한탄강, 청정 재배지",
+    "locationLabel": "소재지",
+    "galleryHeading": "GALLERY"
+  },
+  "certifications": {
+    "title": "CERTIFICATIONS",
+    "subtitle": "인증 및 시험성적서",
+    "emptyState": "보유 인증서 등록을 준비 중입니다. 유기농 인증, GAP, HACCP, β-glucan 시험성적서 등이 순차적으로 게시됩니다."
+  },
+  "contact": {
+    "title": "CONTACT",
+    "subtitle": "문의하기",
+    "intro": "주문, 도매, 기타 문의는 아래 연락처로 부탁드립니다.",
+    "addressLabel": "주소",
+    "addressValue": "경기도 연천군 한탄강 인근 (정확 주소 추후 안내)",
+    "phoneLabel": "전화",
+    "phoneValue": "추후 안내",
+    "emailLabel": "이메일",
+    "emailValue": "추후 안내",
+    "kakaoLabel": "카카오톡 채널",
+    "kakaoValue": "추후 안내",
+    "businessLabel": "사업자 등록번호",
+    "businessValue": "추후 안내",
+    "ecommerceLabel": "통신판매업 신고번호",
+    "ecommerceValue": "추후 안내",
+    "smartstoreLabel": "스마트스토어",
+    "smartstoreValue": "naver.com/ycgoldenfarm"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "tagline": "한탄강 자락의 황금상황버섯",
+    "company": "한여울바이오밸리㈜",
+    "disclaimer": "본 사이트의 모든 제품은 일반 식품이며 의약품이 아닙니다."
+  }
+}
