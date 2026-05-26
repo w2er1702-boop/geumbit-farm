@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import brandData from '@/data/brand.json';
@@ -22,10 +21,13 @@ export default async function FarmPage({
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: 'farm' });
+  const tFooter = await getTranslations({ locale, namespace: 'footer' });
   const location = brandData.farm.location[locale];
   const description = brandData.farm.description[locale];
 
-  const galleryImages = Array.from({ length: 6 }, (_, i) => `/farm/farm-${i + 1}.jpg`);
+  // FIXME(unverified): farm/hero.jpg, farm-1..6.jpg 자산 부재 — 운영주 촬영본 입수 후
+  // 각 placeholder를 next/image 로 교체.
+  const galleryCount = 6;
 
   return (
     <>
@@ -33,15 +35,22 @@ export default async function FarmPage({
         <div className="absolute top-8 right-8 hidden md:block z-10">
           <VerticalHanjaAccent chars="韓灘江" size="lg" />
         </div>
-        <div className="relative aspect-[16/9] md:aspect-[21/9] w-full bg-[var(--color-charcoal)] overflow-hidden">
-          <Image
-            src="/farm/hero.jpg"
-            alt="Geumbit Farm"
-            fill
-            sizes="100vw"
-            className="object-cover opacity-70"
-            priority
-          />
+        <div
+          className="relative aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden"
+          style={{
+            background:
+              'radial-gradient(120% 80% at 30% 20%, var(--color-onyx-soft) 0%, var(--color-charcoal) 55%, var(--color-onyx) 100%)',
+          }}
+          aria-hidden="true"
+        >
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <span
+              className="text-[200px] md:text-[280px] leading-none opacity-15 text-[var(--color-gold)] font-bold"
+              style={{ fontFamily: "'Noto Serif SC', serif" }}
+            >
+              韓灘江
+            </span>
+          </div>
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-onyx)] to-transparent" />
           <div className="absolute inset-0 flex items-end">
             <Container className="pb-12 lg:pb-20">
@@ -65,12 +74,13 @@ export default async function FarmPage({
               <SectionLabel>{t('locationLabel')}</SectionLabel>
               <div className="mt-2 display text-xl">{location}</div>
               <a
-                href="https://map.naver.com/?query=연천+한탄강"
+                href="https://map.naver.com/?query=%EC%97%B0%EC%B2%9C+%ED%95%9C%ED%83%84%EA%B0%95"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-block link-gold-underline text-sm text-[var(--color-oxblood)]"
               >
-                지도에서 보기 ↗
+                지도에서 보기 <span aria-hidden="true">↗</span>
+                <span className="sr-only"> {tFooter('openInNewTab')}</span>
               </a>
             </div>
             <div className="lg:col-span-8 lg:col-start-5">
@@ -89,11 +99,24 @@ export default async function FarmPage({
             {t('galleryHeading')}
           </SectionLabel>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {galleryImages.map((src, i) => (
-              <div key={i} className="relative aspect-[4/5] bg-[var(--color-parchment)] overflow-hidden border border-[var(--color-rule)]">
-                <Image src={src} alt={`Farm ${i + 1}`} fill sizes="(min-width:1024px) 33vw, 50vw" className="object-cover" />
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <span className="label-section text-[var(--color-gold-deep)] opacity-40">
+            {Array.from({ length: galleryCount }, (_, i) => (
+              <div
+                key={i}
+                className="relative aspect-[4/5] overflow-hidden border border-[var(--color-rule)]"
+                style={{
+                  background:
+                    'linear-gradient(135deg, var(--color-parchment) 0%, var(--color-parchment-2) 100%)',
+                }}
+                aria-hidden="true"
+              >
+                <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                  <span
+                    className="text-[88px] leading-none opacity-15 text-[var(--color-gold-deep)] font-bold"
+                    style={{ fontFamily: "'Noto Serif SC', serif" }}
+                  >
+                    桑黃
+                  </span>
+                  <span className="mt-3 label-section text-[var(--color-gold-deep)] opacity-40">
                     GALLERY · {String(i + 1).padStart(2, '0')}
                   </span>
                 </div>
