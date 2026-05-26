@@ -5,20 +5,14 @@ import { isLocale, locales, type Locale } from '@/i18n';
 import { Section, Container, SectionLabel } from '@/components/Section';
 import { GoldRule } from '@/components/GoldRule';
 import { VerticalHanjaAccent } from '@/components/VerticalHanjaAccent';
+import { CertificationCard, type Certification } from '@/components/CertificationCard';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-type CertEntry = {
-  id: string;
-  name: Record<Locale, string>;
-  issuer: Record<Locale, string>;
-  issuedAt: string;
-  image?: string;
-  pdf?: string;
-};
-
+// TODO(certs): 운영주가 실제 보유 인증(유기농·GAP·HACCP·β-glucan 시험성적서 등)을
+// 확정한 뒤 data/certifications.json 채우기. 확인 전엔 빈 배열 유지(허위표시 방지).
 export default async function CertificationsPage({
   params,
 }: {
@@ -30,7 +24,8 @@ export default async function CertificationsPage({
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: 'certifications' });
-  const entries = certificationsData as CertEntry[];
+  const tFooter = await getTranslations({ locale, namespace: 'footer' });
+  const entries = certificationsData as Certification[];
 
   return (
     <>
@@ -58,6 +53,7 @@ export default async function CertificationsPage({
               <span
                 className="text-7xl text-[var(--color-gold)] opacity-40 font-bold"
                 style={{ fontFamily: "'Noto Serif SC', serif" }}
+                aria-hidden="true"
               >
                 準備中
               </span>
@@ -66,31 +62,14 @@ export default async function CertificationsPage({
               </p>
             </div>
           ) : (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {entries.map((entry) => (
-                <div key={entry.id} className="double-border bg-[var(--color-parchment-2)] p-6">
-                  <div className="aspect-[4/3] bg-[var(--color-parchment)] mb-4 flex items-center justify-center">
-                    {entry.image ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={entry.image} alt={entry.name[locale]} className="max-h-full max-w-full" />
-                    ) : (
-                      <span className="label-section text-[var(--color-ink-muted)]">No image</span>
-                    )}
-                  </div>
-                  <h3 className="display text-lg mb-2">{entry.name[locale]}</h3>
-                  <p className="text-sm text-[var(--color-ink-muted)]">{entry.issuer[locale]}</p>
-                  <p className="text-xs text-[var(--color-ink-muted)] mt-1 mono">{entry.issuedAt}</p>
-                  {entry.pdf && (
-                    <a
-                      href={entry.pdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-block link-gold-underline label-section text-[var(--color-oxblood)]"
-                    >
-                      PDF ↗
-                    </a>
-                  )}
-                </div>
+                <CertificationCard
+                  key={entry.id}
+                  entry={entry}
+                  locale={locale}
+                  newTabLabel={tFooter('openInNewTab')}
+                />
               ))}
             </div>
           )}
