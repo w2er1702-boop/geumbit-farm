@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import type { Locale } from '@/i18n';
-import type { Product } from '@/lib/products';
+import { getSmartstoreUrl, type Product } from '@/lib/products';
 
 type Props = {
   product: Product;
@@ -9,16 +9,10 @@ type Props = {
 };
 
 export async function BuyButton({ product, locale, variant = 'primary' }: Props) {
-  const t = await getTranslations({ locale, namespace: 'actions' });
+  const tActions = await getTranslations({ locale, namespace: 'actions' });
+  const tFooter = await getTranslations({ locale, namespace: 'footer' });
 
-  const sixshopBase = process.env.NEXT_PUBLIC_SIXSHOP_URL || '';
-  const naverBase =
-    process.env.NEXT_PUBLIC_NAVER_STORE_URL || 'https://smartstore.naver.com/ycgoldenfarm';
-
-  const href =
-    sixshopBase && product.sixshopSlug
-      ? `${sixshopBase}/product/${product.sixshopSlug}`
-      : `${naverBase}/products/${product.naverProductNo}`;
+  const href = getSmartstoreUrl(product);
 
   return (
     <a
@@ -27,7 +21,8 @@ export async function BuyButton({ product, locale, variant = 'primary' }: Props)
       rel="noopener noreferrer"
       className={`btn ${variant === 'primary' ? 'btn-primary' : 'btn-outline'}`}
     >
-      {t('buyNow')} →
+      {tActions('buyOnSmartstore')} <span aria-hidden="true">→</span>
+      <span className="sr-only"> {tFooter('openInNewTab')}</span>
     </a>
   );
 }

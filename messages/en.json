@@ -9,10 +9,12 @@
   },
   "actions": {
     "buyNow": "Buy Now",
+    "buyOnSmartstore": "Buy on Naver Smartstore",
     "learnMore": "Learn More",
     "inquire": "Inquire",
     "viewAllProducts": "View All Products",
-    "brandStory": "Brand Story"
+    "brandStory": "Brand Story",
+    "checkPriceInStore": "Check price on Smartstore"
   },
   "common": {
     "regularPrice": "List",
@@ -21,7 +23,8 @@
     "category": "Category",
     "all": "All",
     "comingSoon": "Image coming soon",
-    "relatedProducts": "Related Products"
+    "relatedProducts": "Related Products",
+    "priceNote": "Prices shown reflect the Smartstore listing."
   },
   "home": {
     "wordmark": "GEUMBIT FARM",
@@ -73,21 +76,30 @@
   "contact": {
     "title": "CONTACT",
     "subtitle": "Get in Touch",
-    "intro": "For orders, wholesale, and other inquiries, please reach us at the channels below.",
-    "addressLabel": "Address",
-    "addressValue": "Near the Hantangang River, Yeoncheon-gun, Gyeonggi-do (full address TBA)",
+    "intro": "For orders, wholesale, and other inquiries, please reach us through the channels below. For order and shipping questions, the Naver Smartstore is the fastest route.",
+    "channelsHeading": "Channels",
+    "kakaoLabel": "KakaoTalk Channel",
+    "kakaoHref": "",
+    "kakaoValue": "TBA",
     "phoneLabel": "Phone",
+    "phoneHref": "",
     "phoneValue": "TBA",
     "emailLabel": "Email",
+    "emailHref": "",
     "emailValue": "TBA",
-    "kakaoLabel": "KakaoTalk Channel",
-    "kakaoValue": "TBA",
+    "smartstoreLabel": "Smartstore",
+    "smartstoreValue": "smartstore.naver.com/ycgoldenfarm",
+    "pendingValue": "TBA",
+    "ctaKakao": "Message on KakaoTalk",
+    "ctaCall": "Call",
+    "ctaEmail": "Send Email",
+    "ctaSmartstore": "Go to Smartstore",
+    "addressLabel": "Address",
+    "addressValue": "Near the Hantangang River, Yeoncheon-gun, Gyeonggi-do (full address TBA)",
     "businessLabel": "Business Registration No.",
     "businessValue": "TBA",
     "ecommerceLabel": "E-commerce License No.",
-    "ecommerceValue": "TBA",
-    "smartstoreLabel": "Smartstore",
-    "smartstoreValue": "naver.com/ycgoldenfarm"
+    "ecommerceValue": "TBA"
   },
   "footer": {
     "rights": "All rights reserved.",

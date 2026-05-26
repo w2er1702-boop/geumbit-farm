@@ -9,10 +9,12 @@
   },
   "actions": {
     "buyNow": "立即购买",
+    "buyOnSmartstore": "在Naver商店购买",
     "learnMore": "了解更多",
     "inquire": "咨询",
     "viewAllProducts": "查看全部产品",
-    "brandStory": "品牌故事"
+    "brandStory": "品牌故事",
+    "checkPriceInStore": "在Naver商店查看价格"
   },
   "common": {
     "regularPrice": "原价",
@@ -21,7 +23,8 @@
     "category": "分类",
     "all": "全部",
     "comingSoon": "图片准备中",
-    "relatedProducts": "相关产品"
+    "relatedProducts": "相关产品",
+    "priceNote": "所示价格以Naver商店为准。"
   },
   "home": {
     "wordmark": "GEUMBIT FARM",
@@ -74,21 +77,30 @@
   "contact": {
     "title": "CONTACT",
     "subtitle": "联系我们",
-    "intro": "订购、批发及其他咨询，请通过以下方式联系我们。",
-    "addressLabel": "地址",
-    "addressValue": "京畿道涟川郡汉滩江附近（详细地址另行公布）",
+    "intro": "订购、批发及其他咨询，请通过以下渠道联系我们。订购与发货问题，Naver商店是最快的渠道。",
+    "channelsHeading": "联系渠道",
+    "kakaoLabel": "KakaoTalk 频道",
+    "kakaoHref": "",
+    "kakaoValue": "另行公布",
     "phoneLabel": "电话",
+    "phoneHref": "",
     "phoneValue": "另行公布",
     "emailLabel": "邮箱",
+    "emailHref": "",
     "emailValue": "另行公布",
-    "kakaoLabel": "KakaoTalk 频道",
-    "kakaoValue": "另行公布",
+    "smartstoreLabel": "Smartstore",
+    "smartstoreValue": "smartstore.naver.com/ycgoldenfarm",
+    "pendingValue": "另行公布",
+    "ctaKakao": "通过KakaoTalk咨询",
+    "ctaCall": "拨打电话",
+    "ctaEmail": "发送邮件",
+    "ctaSmartstore": "前往Naver商店",
+    "addressLabel": "地址",
+    "addressValue": "京畿道涟川郡汉滩江附近（详细地址另行公布）",
     "businessLabel": "营业执照号",
     "businessValue": "另行公布",
     "ecommerceLabel": "通信销售业申报号",
-    "ecommerceValue": "另行公布",
-    "smartstoreLabel": "Smartstore",
-    "smartstoreValue": "naver.com/ycgoldenfarm"
+    "ecommerceValue": "另行公布"
   },
   "footer": {
     "rights": "All rights reserved.",
