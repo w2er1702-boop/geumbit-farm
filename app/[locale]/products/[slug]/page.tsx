@@ -12,6 +12,7 @@ import {
   getSmartstoreUrl,
   products,
 } from '@/lib/products';
+import { buildPageMetadata, getSiteUrl, pageUrl } from '@/lib/seo';
 import { BuyButton } from '@/components/BuyButton';
 import { ProductCard } from '@/components/ProductCard';
 import { ProductImage } from '@/components/ProductImage';
@@ -36,15 +37,13 @@ export async function generateMetadata({
   if (!product) return {};
 
   const loc = locale as Locale;
-  return {
+  return buildPageMetadata({
+    locale: loc,
+    path: `/products/${product.slug}`,
     title: product.name[loc],
     description: product.shortDesc[loc],
-    openGraph: {
-      title: product.name[loc],
-      description: product.shortDesc[loc],
-      images: [product.image],
-    },
-  };
+    ogImagePath: product.image,
+  });
 }
 
 export default async function ProductDetailPage({
@@ -63,6 +62,7 @@ export default async function ProductDetailPage({
   const t = await getTranslations({ locale, namespace: 'product' });
   const tCommon = await getTranslations({ locale, namespace: 'common' });
   const tActions = await getTranslations({ locale, namespace: 'actions' });
+  const tNav = await getTranslations({ locale, namespace: 'nav' });
 
   const name = product.name[locale];
   const desc = product.shortDesc[locale];
@@ -78,8 +78,9 @@ export default async function ProductDetailPage({
     related.map((p) => ProductCard({ product: p, locale }))
   );
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://w2er1702-boop.github.io/geumbit-farm';
-  const jsonLd = {
+  const siteUrl = getSiteUrl();
+  const detailUrl = pageUrl(`/products/${product.slug}`, locale);
+  const productLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name,
@@ -95,6 +96,15 @@ export default async function ProductDetailPage({
       availability: 'https://schema.org/InStock',
       url: smartstoreUrl,
     },
+  };
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: tNav('home'), item: pageUrl('/', locale) },
+      { '@type': 'ListItem', position: 2, name: tNav('products'), item: pageUrl('/products', locale) },
+      { '@type': 'ListItem', position: 3, name, item: detailUrl },
+    ],
   };
 
   return (
@@ -232,7 +242,11 @@ export default async function ProductDetailPage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
     </>
   );

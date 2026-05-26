@@ -1,7 +1,9 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import certificationsData from '@/data/certifications.json';
 import { isLocale, locales, type Locale } from '@/i18n';
+import { buildPageMetadata } from '@/lib/seo';
 import { Section, Container, SectionLabel } from '@/components/Section';
 import { GoldRule } from '@/components/GoldRule';
 import { VerticalHanjaAccent } from '@/components/VerticalHanjaAccent';
@@ -9,6 +11,22 @@ import { CertificationCard, type Certification } from '@/components/Certificatio
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const t = await getTranslations({ locale, namespace: 'seo' });
+  return buildPageMetadata({
+    locale: locale as Locale,
+    path: '/certifications',
+    title: t('certificationsTitle'),
+    description: t('certificationsDescription'),
+  });
 }
 
 // TODO(certs): 운영주가 실제 보유 인증(유기농·GAP·HACCP·β-glucan 시험성적서 등)을

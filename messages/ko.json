@@ -26,6 +26,27 @@
     "relatedProducts": "관련 상품",
     "priceNote": "표시 가격은 스마트스토어 기준입니다."
   },
+  "a11y": {
+    "skipToContent": "본문으로 건너뛰기"
+  },
+  "seo": {
+    "homeTitle": "금빛농원 · 한탄강 자락의 황금상황버섯",
+    "homeDescription": "한탄강 자락 청정 재배지에서 참나무 원목 위 황금상황버섯을 길러온 금빛농원. 원물·슬라이스·진액·발효액 9종 라인업.",
+    "brandTitle": "브랜드 스토리",
+    "brandDescription": "운영 법인 한여울바이오밸리㈜의 품질 철학과 금빛농원이 걸어온 길.",
+    "productsTitle": "상품 · 황금상황버섯 9선",
+    "productsDescription": "원물·슬라이스·진액·발효액까지 한탄강의 시간이 담긴 황금상황버섯 라인업.",
+    "farmTitle": "농장 · 연천 한탄강",
+    "farmDescription": "현무암 협곡과 맑은 물이 흐르는 연천 한탄강의 청정 재배지.",
+    "certificationsTitle": "인증",
+    "certificationsDescription": "금빛농원이 보유한 인증서와 시험성적서.",
+    "contactTitle": "문의",
+    "contactDescription": "주문·도매·기타 문의를 위한 카카오톡·전화·이메일·스마트스토어 채널.",
+    "privacyTitle": "개인정보처리방침",
+    "privacyDescription": "한여울바이오밸리㈜의 개인정보 처리에 관한 안내.",
+    "termsTitle": "이용약관",
+    "termsDescription": "금빛농원 브랜드 사이트 이용약관."
+  },
   "home": {
     "wordmark": "GEUMBIT FARM",
     "brandKo": "금빛농원",

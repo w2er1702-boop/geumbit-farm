@@ -1,13 +1,31 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import brandData from '@/data/brand.json';
 import { isLocale, locales, type Locale } from '@/i18n';
+import { buildPageMetadata, getSiteUrl, pageUrl } from '@/lib/seo';
 import { Section, Container, SectionLabel } from '@/components/Section';
 import { GoldRule } from '@/components/GoldRule';
 import { VerticalHanjaAccent } from '@/components/VerticalHanjaAccent';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const t = await getTranslations({ locale, namespace: 'seo' });
+  return buildPageMetadata({
+    locale: locale as Locale,
+    path: '/farm',
+    title: t('farmTitle'),
+    description: t('farmDescription'),
+  });
 }
 
 export default async function FarmPage({
@@ -28,6 +46,24 @@ export default async function FarmPage({
   // FIXME(unverified): farm/hero.jpg, farm-1..6.jpg 자산 부재 — 운영주 촬영본 입수 후
   // 각 placeholder를 next/image 로 교체.
   const galleryCount = 6;
+
+  // TODO(legal): 정식 주소·연락처·좌표는 운영주 확인 후 채울 것. addressLocality 외에는
+  // 검증되지 않은 정보를 LocalBusiness 구조화 데이터에 노출하지 않는다.
+  const localBusinessLd = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${getSiteUrl()}#farm`,
+    name: 'GEUMBIT FARM',
+    legalName: tFooter('company'),
+    description,
+    url: pageUrl('/farm', locale),
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'KR',
+      addressRegion: 'Gyeonggi-do',
+      addressLocality: 'Yeoncheon-gun',
+    },
+  };
 
   return (
     <>
@@ -125,6 +161,11 @@ export default async function FarmPage({
           </div>
         </Container>
       </Section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessLd) }}
+      />
     </>
   );
 }

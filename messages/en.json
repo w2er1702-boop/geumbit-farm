@@ -26,6 +26,27 @@
     "relatedProducts": "Related Products",
     "priceNote": "Prices shown reflect the Smartstore listing."
   },
+  "a11y": {
+    "skipToContent": "Skip to content"
+  },
+  "seo": {
+    "homeTitle": "Geumbit Farm · Golden sanghwang of the Hantangang",
+    "homeDescription": "Geumbit Farm cultivates golden sanghwang on oak logs along the pristine Hantangang River. Nine selections — whole, sliced, extract, fermented.",
+    "brandTitle": "Brand Story",
+    "brandDescription": "The quality philosophy of Hanyeoul Bio Valley Co., Ltd. and the path Geumbit Farm has walked.",
+    "productsTitle": "Products · Nine Sanghwang Selections",
+    "productsDescription": "From whole material to extracts and fermented liquid — a lineup imbued with the time of the Hantangang.",
+    "farmTitle": "Farm · Yeoncheon Hantangang",
+    "farmDescription": "A pristine growing region of basalt gorges and clear waters along the Hantangang River in Yeoncheon.",
+    "certificationsTitle": "Certifications",
+    "certificationsDescription": "Certificates and test reports held by Geumbit Farm.",
+    "contactTitle": "Contact",
+    "contactDescription": "KakaoTalk, phone, email, and Smartstore channels for orders, wholesale and other inquiries.",
+    "privacyTitle": "Privacy Policy",
+    "privacyDescription": "How Hanyeoul Bio Valley Co., Ltd. handles personal information.",
+    "termsTitle": "Terms of Service",
+    "termsDescription": "Terms of service for the Geumbit Farm brand site."
+  },
   "home": {
     "wordmark": "GEUMBIT FARM",
     "brandKo": "금빛농원",
