@@ -50,7 +50,7 @@ export function buildPageMetadata({
   path,
   title,
   description,
-  ogImagePath = '/og-default.jpg',
+  ogImagePath = '/og-default.svg',
 }: PageMetaOptions): Metadata {
   const siteUrl = getSiteUrl();
   const canonical = pageUrl(path, locale);

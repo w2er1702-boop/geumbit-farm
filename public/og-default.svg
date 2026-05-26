@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bg" cx="30%" cy="20%" r="100%">
+      <stop offset="0%" stop-color="#1A1916"/>
+      <stop offset="55%" stop-color="#2D2A24"/>
+      <stop offset="100%" stop-color="#0F0E0C"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#C9A961" stroke-width="1"/>
+  <rect x="56" y="56" width="1088" height="518" fill="none" stroke="#C9A961" stroke-width="0.5" opacity="0.5"/>
+  <text x="600" y="280" text-anchor="middle" font-family="'Noto Serif SC', 'Source Han Serif SC', serif" font-size="260" font-weight="700" fill="#C9A961" opacity="0.95">黃金</text>
+  <line x1="450" y1="370" x2="750" y2="370" stroke="#C9A961" stroke-width="1"/>
+  <text x="600" y="430" text-anchor="middle" font-family="'Cinzel', 'Times New Roman', serif" font-size="48" font-weight="500" fill="#F5EFE2" letter-spacing="14">GEUMBIT FARM</text>
+  <text x="600" y="478" text-anchor="middle" font-family="'Noto Serif KR', serif" font-size="22" fill="#F5EFE2" opacity="0.7" letter-spacing="8">금빛농원 · 한탄강 자락의 황금상황버섯</text>
+  <text x="80" y="555" font-family="'Cinzel', serif" font-size="14" fill="#C9A961" opacity="0.6" letter-spacing="4">EST · 連川 · 韓灘江</text>
+</svg>

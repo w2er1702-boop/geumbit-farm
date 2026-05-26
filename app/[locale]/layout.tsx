@@ -99,7 +99,7 @@ export default async function LocaleLayout({
     name: 'GEUMBIT FARM',
     legalName: tFooter('company'),
     url: siteUrl,
-    logo: `${siteUrl}/og-default.jpg`,
+    logo: `${siteUrl}/og-default.svg`,
     sameAs: ['https://smartstore.naver.com/ycgoldenfarm'],
   };
 
