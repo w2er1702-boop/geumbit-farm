@@ -20,6 +20,10 @@ export default async function ContactPage({
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: 'contact' });
+  const tFooter = await getTranslations({ locale, namespace: 'footer' });
+
+  const smartstoreUrl =
+    process.env.NEXT_PUBLIC_NAVER_STORE_URL || 'https://smartstore.naver.com/ycgoldenfarm';
 
   const rows = [
     { label: t('addressLabel'), value: t('addressValue') },
@@ -31,7 +35,7 @@ export default async function ContactPage({
     {
       label: t('smartstoreLabel'),
       value: t('smartstoreValue'),
-      href: 'https://smartstore.naver.com/ycgoldenfarm',
+      href: smartstoreUrl,
     },
   ];
 
@@ -70,7 +74,8 @@ export default async function ContactPage({
                         rel="noopener noreferrer"
                         className="link-gold-underline text-[var(--color-oxblood)]"
                       >
-                        {row.value} ↗
+                        {row.value} <span aria-hidden="true">↗</span>
+                        <span className="sr-only"> {tFooter('openInNewTab')}</span>
                       </a>
                     ) : (
                       row.value
