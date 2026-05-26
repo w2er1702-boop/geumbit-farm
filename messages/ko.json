@@ -93,6 +93,31 @@
     "rights": "All rights reserved.",
     "tagline": "한탄강 자락의 황금상황버섯",
     "company": "한여울바이오밸리㈜",
-    "disclaimer": "본 사이트의 모든 제품은 일반 식품이며 의약품이 아닙니다."
+    "disclaimer": "본 사이트의 모든 제품은 일반 식품이며 의약품이 아닙니다.",
+    "legalHeading": "사업자 정보",
+    "ceoLabel": "대표자",
+    "ceoValue": "추후 안내",
+    "businessLabel": "사업자등록번호",
+    "businessValue": "추후 안내",
+    "ecommerceLabel": "통신판매업 신고번호",
+    "ecommerceValue": "추후 안내",
+    "addressLabel": "사업장 주소",
+    "addressValue": "경기도 연천군 한탄강 인근 (정확 주소 추후 안내)",
+    "phoneLabel": "전화",
+    "phoneValue": "추후 안내",
+    "emailLabel": "이메일",
+    "emailValue": "추후 안내",
+    "smartstoreLabel": "스마트스토어",
+    "openInNewTab": "(새 창에서 열림)",
+    "privacy": "개인정보처리방침",
+    "terms": "이용약관"
+  },
+  "legal": {
+    "privacyTitle": "개인정보처리방침",
+    "privacySubtitle": "Privacy Policy",
+    "privacyPlaceholder": "본 페이지는 준비 중입니다. 한여울바이오밸리㈜는 「개인정보 보호법」을 준수하며, 정식 방침이 확정되는 대로 이 자리에 게시할 예정입니다.",
+    "termsTitle": "이용약관",
+    "termsSubtitle": "Terms of Service",
+    "termsPlaceholder": "본 페이지는 준비 중입니다. 본 사이트는 한여울바이오밸리㈜의 브랜드·상품 소개 매체이며, 결제·배송은 네이버 스마트스토어에서 이루어집니다. 정식 약관이 확정되는 대로 이 자리에 게시할 예정입니다."
   }
 }

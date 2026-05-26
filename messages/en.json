@@ -93,6 +93,31 @@
     "rights": "All rights reserved.",
     "tagline": "Golden sanghwang of the Hantangang.",
     "company": "Hanyeoul Bio Valley Co., Ltd.",
-    "disclaimer": "All products on this site are general foods, not medicines."
+    "disclaimer": "All products on this site are general foods, not medicines.",
+    "legalHeading": "Business Information",
+    "ceoLabel": "Representative",
+    "ceoValue": "TBA",
+    "businessLabel": "Business Registration No.",
+    "businessValue": "TBA",
+    "ecommerceLabel": "E-commerce License No.",
+    "ecommerceValue": "TBA",
+    "addressLabel": "Address",
+    "addressValue": "Near the Hantangang River, Yeoncheon-gun, Gyeonggi-do (full address TBA)",
+    "phoneLabel": "Phone",
+    "phoneValue": "TBA",
+    "emailLabel": "Email",
+    "emailValue": "TBA",
+    "smartstoreLabel": "Smartstore",
+    "openInNewTab": "(opens in a new tab)",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "legal": {
+    "privacyTitle": "Privacy Policy",
+    "privacySubtitle": "Privacy Policy",
+    "privacyPlaceholder": "This page is being prepared. Hanyeoul Bio Valley Co., Ltd. complies with Korea's Personal Information Protection Act and will publish its full policy here once finalized.",
+    "termsTitle": "Terms of Service",
+    "termsSubtitle": "Terms of Service",
+    "termsPlaceholder": "This page is being prepared. This site introduces brand and products of Hanyeoul Bio Valley Co., Ltd.; payment and shipping are handled through the Naver Smartstore. Full terms will be published here once finalized."
   }
 }

@@ -7,7 +7,16 @@ export const dynamic = 'force-static';
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://w2er1702-boop.github.io/geumbit-farm';
 
-const pages = ['', '/brand', '/products', '/farm', '/certifications', '/contact'];
+const pages = [
+  '',
+  '/brand',
+  '/products',
+  '/farm',
+  '/certifications',
+  '/contact',
+  '/privacy',
+  '/terms',
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

@@ -94,6 +94,31 @@
     "rights": "All rights reserved.",
     "tagline": "汉滩江畔的黄金桑黄。",
     "company": "韩如月生物谷株式会社",
-    "disclaimer": "本网站所有产品均为一般食品，并非药品。"
+    "disclaimer": "本网站所有产品均为一般食品，并非药品。",
+    "legalHeading": "企业信息",
+    "ceoLabel": "代表",
+    "ceoValue": "另行公布",
+    "businessLabel": "营业执照号",
+    "businessValue": "另行公布",
+    "ecommerceLabel": "通信销售业申报号",
+    "ecommerceValue": "另行公布",
+    "addressLabel": "营业地址",
+    "addressValue": "京畿道涟川郡汉滩江附近（详细地址另行公布）",
+    "phoneLabel": "电话",
+    "phoneValue": "另行公布",
+    "emailLabel": "邮箱",
+    "emailValue": "另行公布",
+    "smartstoreLabel": "Smartstore",
+    "openInNewTab": "（新窗口打开）",
+    "privacy": "隐私政策",
+    "terms": "使用条款"
+  },
+  "legal": {
+    "privacyTitle": "隐私政策",
+    "privacySubtitle": "Privacy Policy",
+    "privacyPlaceholder": "本页面正在准备中。韩如月生物谷株式会社遵守《个人信息保护法》，正式方针确定后将在此处发布。",
+    "termsTitle": "使用条款",
+    "termsSubtitle": "Terms of Service",
+    "termsPlaceholder": "本页面正在准备中。本网站为韩如月生物谷株式会社的品牌与产品介绍媒体，结算与发货通过 Naver Smartstore 进行。正式条款确定后将在此处发布。"
   }
 }
