@@ -7,7 +7,9 @@ import { localePath } from '@/lib/navigation';
 import {
   formatPrice,
   getCategoryLabel,
+  getPriceMode,
   getProductBySlug,
+  getSmartstoreUrl,
   products,
 } from '@/lib/products';
 import { BuyButton } from '@/components/BuyButton';
@@ -68,6 +70,8 @@ export default async function ProductDetailPage({
   const discount = Math.round(
     ((product.regularPrice - product.salePrice) / product.regularPrice) * 100
   );
+  const priceMode = getPriceMode();
+  const smartstoreUrl = getSmartstoreUrl(product);
 
   const related = products.filter((p) => p.slug !== product.slug).slice(0, 3);
   const relatedCards = await Promise.all(
@@ -89,6 +93,7 @@ export default async function ProductDetailPage({
       priceCurrency: 'KRW',
       price: product.salePrice,
       availability: 'https://schema.org/InStock',
+      url: smartstoreUrl,
     },
   };
 
@@ -125,27 +130,38 @@ export default async function ProductDetailPage({
               <GoldRule className="my-8" />
 
               <div className="space-y-3">
-                <div className="flex items-baseline gap-3">
-                  <span className="label-section text-[var(--color-ink-muted)] w-16">
-                    {tCommon('regularPrice')}
-                  </span>
-                  <span className="price text-base text-[var(--color-ink-muted)] line-through">
-                    {formatPrice(product.regularPrice, locale)}
-                  </span>
-                </div>
-                <div className="flex items-baseline gap-3">
-                  <span className="label-section text-[var(--color-ink-muted)] w-16">
-                    {tCommon('salePrice')}
-                  </span>
-                  <span className="price text-3xl text-[var(--color-oxblood)] font-medium">
-                    {formatPrice(product.salePrice, locale)}
-                  </span>
-                  {discount > 0 && (
-                    <span className="label-section text-[var(--color-oxblood)]">
-                      -{discount}%
-                    </span>
-                  )}
-                </div>
+                {priceMode === 'show' ? (
+                  <>
+                    <div className="flex items-baseline gap-3">
+                      <span className="label-section text-[var(--color-ink-muted)] w-16">
+                        {tCommon('regularPrice')}
+                      </span>
+                      <span className="price text-base text-[var(--color-ink-muted)] line-through">
+                        {formatPrice(product.regularPrice, locale)}
+                      </span>
+                    </div>
+                    <div className="flex items-baseline gap-3">
+                      <span className="label-section text-[var(--color-ink-muted)] w-16">
+                        {tCommon('salePrice')}
+                      </span>
+                      <span className="price text-3xl text-[var(--color-oxblood)] font-medium">
+                        {formatPrice(product.salePrice, locale)}
+                      </span>
+                      {discount > 0 && (
+                        <span className="label-section text-[var(--color-oxblood)]">
+                          -{discount}%
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-xs text-[var(--color-ink-muted)] opacity-80">
+                      ※ {tCommon('priceNote')}
+                    </p>
+                  </>
+                ) : (
+                  <p className="text-base text-[var(--color-ink-muted)]">
+                    {tActions('checkPriceInStore')}
+                  </p>
+                )}
                 <div className="flex items-baseline gap-3">
                   <span className="label-section text-[var(--color-ink-muted)] w-16">
                     {tCommon('weight')}
