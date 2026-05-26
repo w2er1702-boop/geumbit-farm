@@ -24,6 +24,7 @@ export default async function BrandPage({
 
   const company = brandData.company[locale];
   const brandName = brandData.brandName[locale];
+  // TODO(copy): story[2]는 운영주 인터뷰 확정 후 정식 카피로 교체 (data/brand.json)
   const story = brandData.story[locale];
   const principles = brandData.principles;
 
