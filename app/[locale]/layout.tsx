@@ -84,7 +84,7 @@ export async function generateMetadata({
 
   const t = await getTranslations({ locale, namespace: 'home' });
   const tFooter = await getTranslations({ locale, namespace: 'footer' });
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://w2er1702-boop.github.io/geumbit-farm';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://w2er1702-boop.github.io/geumbit-farm';
 
   const titleByLocale: Record<Locale, string> = {
     ko: '금빛농원 · GEUMBIT FARM',

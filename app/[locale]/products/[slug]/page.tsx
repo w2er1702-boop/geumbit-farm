@@ -74,7 +74,7 @@ export default async function ProductDetailPage({
     related.map((p) => ProductCard({ product: p, locale }))
   );
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://w2er1702-boop.github.io/geumbit-farm';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://w2er1702-boop.github.io/geumbit-farm';
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',

@@ -11,9 +11,9 @@ type Props = {
 export async function BuyButton({ product, locale, variant = 'primary' }: Props) {
   const t = await getTranslations({ locale, namespace: 'actions' });
 
-  const sixshopBase = process.env.NEXT_PUBLIC_SIXSHOP_URL;
+  const sixshopBase = process.env.NEXT_PUBLIC_SIXSHOP_URL || '';
   const naverBase =
-    process.env.NEXT_PUBLIC_NAVER_STORE_URL ?? 'https://smartstore.naver.com/ycgoldenfarm';
+    process.env.NEXT_PUBLIC_NAVER_STORE_URL || 'https://smartstore.naver.com/ycgoldenfarm';
 
   const href =
     sixshopBase && product.sixshopSlug
