@@ -38,6 +38,22 @@ jobs:
           NEXT_PUBLIC_PRICE_MODE: ${{ vars.NEXT_PUBLIC_PRICE_MODE }}
           NEXT_PUBLIC_GA_ID: ${{ vars.NEXT_PUBLIC_GA_ID }}
 
+      # === Cafe24 시안 프리뷰 추가 배포 (/cafe24-preview/) ===
+      - name: Checkout cafe24-skin branch
+        uses: actions/checkout@v4
+        with:
+          ref: cafe24-skin
+          path: cafe24-branch
+
+      - name: Build Cafe24 preview
+        working-directory: cafe24-branch
+        run: node preview/build.mjs
+
+      - name: Mount preview under out/cafe24-preview/
+        run: |
+          mkdir -p out/cafe24-preview
+          cp -R cafe24-branch/preview/site/. out/cafe24-preview/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
