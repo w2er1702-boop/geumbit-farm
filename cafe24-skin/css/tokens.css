@@ -1,0 +1,77 @@
+/* ============================================================
+   금빛농원 디자인 토큰 — 설계서 §2 매핑
+   ============================================================ */
+
+:root {
+  /* ---- Color (§2.1) ---- */
+  --c-bg-dark:  #11100D;   /* Cheonhwang Signature Black */
+  --c-gold:     #D8AA4B;   /* Cheonhwang Gold */
+  --c-walnut:   #3A2115;   /* Deep Walnut Brown */
+  --c-amber:    #6E2A12;   /* Tea Amber */
+  --c-ivory:    #F7E8CD;   /* Porcelain Ivory */
+  --c-brass:    #C9A15A;   /* Soft Brass Line */
+
+  --c-text:        #1A1714;
+  --c-text-mute:   #6E665D;
+  --c-text-on-dark:#F7E8CD;
+  --c-line:        rgba(58, 33, 21, 0.14);
+  --c-line-soft:   rgba(201, 161, 90, 0.35);
+
+  /* ---- Typography (§2.2) ---- */
+  --ff-body:    'Pretendard', 'Noto Sans KR', system-ui, -apple-system, sans-serif;
+  --ff-serif:   'Noto Serif KR', 'MaruBuri', serif;
+  --ff-deco:    'Cormorant Garamond', 'Noto Serif KR', serif;
+
+  --fs-hero:    clamp(1.75rem, 4.5vw, 3.25rem);   /* 28→52 */
+  --fs-h1:      clamp(1.5rem, 3.2vw, 2.25rem);
+  --fs-h2:      clamp(1.25rem, 2.4vw, 1.75rem);
+  --fs-h3:      1.125rem;
+  --fs-body:    1rem;
+  --fs-small:   0.875rem;
+  --fs-xsmall:  0.75rem;
+
+  --lh-tight:   1.2;
+  --lh-base:    1.65;
+
+  /* ---- Layout (§2.3) ---- */
+  --container:  1200px;
+  --gutter-mo:  20px;
+  --gutter-pc:  40px;
+
+  --space-1:    4px;
+  --space-2:    8px;
+  --space-3:    12px;
+  --space-4:    16px;
+  --space-5:    24px;
+  --space-6:    32px;
+  --space-7:    48px;
+  --space-8:    64px;
+  --space-9:    96px;
+
+  --section-y-mo: var(--space-8);
+  --section-y-pc: var(--space-9);
+
+  /* ---- Radius / Shadow ---- */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 14px;
+
+  --shadow-soft: 0 6px 24px rgba(17, 16, 13, 0.08);
+  --shadow-hov:  0 10px 32px rgba(17, 16, 13, 0.14);
+
+  /* ---- Header heights ---- */
+  --h-header-mo: 56px;
+  --h-header-pc: 72px;
+  --h-mobile-bar: 64px;
+
+  /* ---- Z-Index ---- */
+  --z-header: 100;
+  --z-mobile-bar: 90;
+  --z-modal: 200;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter-mo: var(--gutter-pc);
+  }
+}

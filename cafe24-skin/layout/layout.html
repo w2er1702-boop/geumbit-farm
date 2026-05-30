@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>금빛농원 GEUMBIT FARM · 깊은 자연을 달여낸 금빛 정성</title>
+  <meta name="description" content="연천 한탄강 자락의 가족 농원이 정성껏 기른 프리미엄 상황버섯. 원물·슬라이스·진액·발효액을 농장직송으로." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="금빛농원 GEUMBIT FARM" />
+  <meta property="og:description" content="깊은 자연을 달여낸 금빛 정성" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts (§1.4) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" />
+
+  <!-- Skin CSS (§1.2) -->
+  <!--@css(/css/tokens.css)-->
+  <!--@css(/css/style.css)-->
+
+  <!-- 본문 컨텐츠가 노출되는 영역. 카페24가 자동 주입할 수도 있음 -->
+  ##head_html##
+</head>
+<body>
+
+  <!--@import("/layout/_header.html")-->
+
+  <main id="content" role="main">
+    <!-- 각 페이지(메인·상품·게시판 등)가 이 위치를 채운다. -->
+    ##content_html##
+  </main>
+
+  <!--@import("/layout/_footer.html")-->
+
+  <!-- Scripts -->
+  <!--@js(/js/script.js)-->
+
+  <script>
+    // 푸터 연도 자동 갱신
+    (function () {
+      var el = document.querySelector('[data-year]');
+      if (el) el.textContent = String(new Date().getFullYear());
+    })();
+  </script>
+</body>
+</html>

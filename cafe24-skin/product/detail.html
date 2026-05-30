@@ -1,0 +1,143 @@
+<!-- =====================================================
+     상품 상세  — 설계서 §4.4
+     ★ 상단 구매영역은 카페24 모듈/변수 그대로 유지해야 한다 (§1.2 경고)
+     ===================================================== -->
+
+<section class="section section--ivory">
+  <div class="container">
+
+    <!-- ============== 상단 구매 영역 (모듈 자리) ============== -->
+    <!-- module: product_detail  -->
+    <div class="pd-top" module="product_detail">
+
+      <div class="pd-gallery">
+        <!-- 카페24 상품 이미지 모듈 -->
+        <img src="##image_large##" alt="##product_name##" />
+      </div>
+
+      <div class="pd-info">
+        <p class="eyebrow">##brand_name##</p>
+        <h1>##product_name##</h1>
+        <p class="lead">##simple_description##</p>
+
+        <div class="price" style="margin-top:var(--space-5);">
+          <span class="price__list">##product_price##원</span>
+          <span class="price__sale">##product_sale_price##<span class="unit">원</span></span>
+        </div>
+        <span class="badge-amber" style="margin-top:var(--space-3);">##discount_percent##% 할인</span>
+
+        <div class="pd-options">
+          <label for="opt-weight">중량 옵션</label>
+          <!-- 카페24 옵션 셀렉트 자리. 실제 모듈이 옵션을 자동 렌더. -->
+          <select id="opt-weight" name="option1">
+            <option>선택해 주세요</option>
+            <option>250g</option>
+            <option>500g</option>
+          </select>
+        </div>
+
+        <div class="pd-options">
+          <label for="qty">수량</label>
+          <input id="qty" type="number" min="1" value="1"
+                 style="height:48px;width:100%;border:1px solid var(--c-line);border-radius:var(--r-sm);padding:0 var(--space-3);font:inherit;" />
+        </div>
+
+        <div class="pd-actions">
+          <button class="btn btn--primary" type="button" onclick="add_basket();return false;">장바구니</button>
+          <button class="btn btn--cta"     type="button" onclick="order_buynow();return false;">바로 구매</button>
+        </div>
+
+        <p style="margin-top:var(--space-4); font-size:var(--fs-small); color:var(--c-text-mute);">
+          ##delivery_text##  ·  ##estimated_text##
+        </p>
+      </div>
+
+    </div>
+    <!-- ============== /상단 구매 영역 ============== -->
+
+
+    <!-- ============== 상세 설명 (HTML 섹션형, §4.4 추천) ============== -->
+
+    <section class="pd-section" data-reveal>
+      <p class="eyebrow">01 · Why</p>
+      <h2>왜 금빛농원인가</h2>
+      <p>연천 한탄강 자락에서 가족이 직접 길러낸 상황버섯. 시간과 정성을 아끼지 않은 결과만 자사몰에 올립니다.</p>
+    </section>
+
+    <section class="pd-section" data-reveal>
+      <p class="eyebrow">02 · Form</p>
+      <h2>원물과 슬라이스</h2>
+      <p>원물은 오래 우려내는 분께, 슬라이스는 일상에서 간편하게 우려내고 싶은 분께 맞습니다.</p>
+    </section>
+
+    <section class="pd-section" data-reveal>
+      <p class="eyebrow">03 · Origin</p>
+      <h2>산지와 재배 환경</h2>
+      <p>한탄강 인근의 청정한 공기와 깨끗한 물. 무농약 원칙으로 길러냅니다.</p>
+    </section>
+
+    <section class="pd-section" data-reveal>
+      <p class="eyebrow">04 · Selection</p>
+      <h2>선별과 건조 기준</h2>
+      <p>크기·결·향으로 등급을 가르고, 적정 온도에서 천천히 건조해 결이 살아 있게 만듭니다.</p>
+    </section>
+
+    <section class="pd-section" data-reveal>
+      <p class="eyebrow">05 · Specs</p>
+      <h2>구성 · 중량 안내</h2>
+      <ul>
+        <li>중량: 250g / 500g</li>
+        <li>구성: 원물 또는 슬라이스</li>
+        <li>보관: 직사광선·습기를 피해 서늘한 곳</li>
+      </ul>
+    </section>
+
+    <section class="pd-section" data-reveal>
+      <p class="eyebrow">06 · How</p>
+      <h2>달이는 방법</h2>
+      <ol>
+        <li>찬물 2L에 원물 30g을 1시간 정도 담가둡니다.</li>
+        <li>중약불에서 2~3시간 끓여 황갈색 탕액을 얻습니다.</li>
+        <li>따뜻하게 또는 식혀 두세 잔으로 나누어 마십니다.</li>
+      </ol>
+    </section>
+
+    <section class="pd-section" data-reveal>
+      <p class="eyebrow">07 · Gift</p>
+      <h2>선물 포장</h2>
+      <p>단정한 포장과 카드 동봉 가능. 대량 주문은 1:1 문의로.</p>
+    </section>
+
+    <section class="pd-section" data-reveal>
+      <p class="eyebrow">08 · Quality</p>
+      <h2>인증 · 품질관리</h2>
+      <div class="cert-grid">
+        <div class="cert-tile">유기농 인증</div>
+        <div class="cert-tile">위생 등급</div>
+        <div class="cert-tile">FDA 등록</div>
+        <div class="cert-tile">생산이력</div>
+      </div>
+    </section>
+
+    <section class="pd-section" data-reveal>
+      <p class="eyebrow">09 · Notice</p>
+      <h2>배송 · 보관 · 주의사항</h2>
+      <p style="font-size:var(--fs-small); color:var(--c-text-mute);">
+        본 제품은 일반식품(또는 가공식품)으로, 질병의 예방·치료 효과를 가지지 않습니다.
+        체질에 따라 알레르기 반응이 있을 수 있으니 섭취 시 유의해 주세요.
+      </p>
+    </section>
+
+  </div>
+</section>
+
+<!-- 관련 상품 자리 -->
+<section class="section section--ivory" style="border-top:1px solid var(--c-line);">
+  <div class="container" data-reveal>
+    <p class="eyebrow">Related</p>
+    <h2 class="h-title">함께 보면 좋은 제품</h2>
+    <div class="product-grid" module="product_relation_1">
+      <!-- ##image_medium## ##product_name## ##product_sale_price## -->
+    </div>
+  </div>
+</section>

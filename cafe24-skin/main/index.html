@@ -1,0 +1,198 @@
+<!-- =====================================================
+     메인(홈)  — 설계서 §4.2  (8개 섹션)
+     이 파일은 layout.html의 ##content_html## 위치에 합쳐진다.
+     ===================================================== -->
+
+<!-- 1. 히어로 -->
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="container hero__inner" data-reveal>
+    <p class="eyebrow">Geumbit Farm · Yeoncheon</p>
+    <h1 class="hero__slogan">
+      깊은 자연을 달여낸 <span class="accent">금빛 정성</span>
+    </h1>
+    <p class="hero__sub">
+      연천의 청정한 자연에서 정성껏 기른 프리미엄 상황버섯.<br/>
+      원물부터 진액, 발효액까지 금빛농원의 기준으로 귀하게 전합니다.
+    </p>
+    <div class="hero__cta">
+      <a class="btn btn--cta" href="/product/list.html?cate_no=24">제품 보기</a>
+      <a class="btn btn--ghost" href="/board/qna/">선물세트 문의</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. 브랜드 한 줄 + 핵심 키워드 -->
+<div class="keyword-strip" role="region" aria-label="브랜드 핵심 키워드">
+  <span>연천</span>
+  <span>한탄강</span>
+  <span>무농약 재배</span>
+  <span>국산 유기농</span>
+  <span>농장직송</span>
+</div>
+
+<!-- 3. 제품 라인업 (5 카드) -->
+<section class="section section--ivory">
+  <div class="container" data-reveal>
+    <p class="eyebrow">Product Lineup</p>
+    <h2 class="h-title">금빛농원의 다섯 가지 결</h2>
+
+    <!--
+      module: product_listmain_1  — 카페24 어드민 "메인 상품 진열"로 연결
+      아래 카드 5개는 ##image_medium## ##product_name## ##product_price## 변수로 치환할 자리이며,
+      1차에서는 정적 마크업으로 톤만 잡아둔다. (5상품: 원물·슬라이스·혼합세트·진액·발효액)
+    -->
+    <div class="product-grid" module="product_listmain_1">
+      <a class="product-card" href="/product/detail.html?product_no=1">
+        <div class="product-card__img"></div>
+        <div class="product-card__body">
+          <span class="product-card__tag">국산 · 농장직송</span>
+          <h3 class="product-card__name">상황버섯 원물</h3>
+          <div class="price">
+            <span class="price__list">125,000원</span>
+            <span class="price__sale">97,500<span class="unit">원~</span></span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="/product/detail.html?product_no=2">
+        <div class="product-card__img"></div>
+        <div class="product-card__body">
+          <span class="product-card__tag">우려내기 편한</span>
+          <h3 class="product-card__name">상황버섯 슬라이스</h3>
+          <div class="price">
+            <span class="price__list">125,000원</span>
+            <span class="price__sale">97,500<span class="unit">원~</span></span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="/product/detail.html?product_no=3">
+        <div class="product-card__img"></div>
+        <div class="product-card__body">
+          <span class="product-card__tag">선물 추천</span>
+          <h3 class="product-card__name">혼합 세트 500g</h3>
+          <div class="price">
+            <span class="price__list">240,000원</span>
+            <span class="price__sale">189,600<span class="unit">원</span></span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="/product/detail.html?product_no=4">
+        <div class="product-card__img"></div>
+        <div class="product-card__body">
+          <span class="product-card__tag">간편 섭취</span>
+          <h3 class="product-card__name">상황버섯 진액</h3>
+          <div class="price">
+            <span class="price__list">140,000원</span>
+            <span class="price__sale">112,000<span class="unit">원</span></span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="/product/detail.html?product_no=5">
+        <div class="product-card__img"></div>
+        <div class="product-card__body">
+          <span class="product-card__tag">정성 발효</span>
+          <h3 class="product-card__name">상황버섯 발효액</h3>
+          <div class="price">
+            <span class="price__list">275,000원</span>
+            <span class="price__sale">220,000<span class="unit">원</span></span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 4. 금빛농원의 기준 (신뢰 섹션) -->
+<section class="section section--dark">
+  <div class="container" data-reveal>
+    <p class="eyebrow">Our Standard</p>
+    <h2 class="h-title">금빛농원의 기준</h2>
+    <p class="lead">시간과 정성을 들여 길러낸 원물만 자사몰에 올립니다. 산지부터 선별까지, 우리 농원이 지키는 네 가지 약속.</p>
+
+    <div class="feature-grid mt-7">
+      <div class="feature-card">
+        <h3>국내산 원료</h3>
+        <p>연천에서 자란 국산 상황버섯만 사용합니다.</p>
+      </div>
+      <div class="feature-card">
+        <h3>한탄강 재배 환경</h3>
+        <p>맑은 물과 단단한 바람이 닿는 청정 산지.</p>
+      </div>
+      <div class="feature-card">
+        <h3>손 선별 기준</h3>
+        <p>크기·결·향을 손으로 가려 등급을 나눕니다.</p>
+      </div>
+      <div class="feature-card">
+        <h3>공인된 품질</h3>
+        <p>유기농 인증과 위생 관리 체계를 갖추었습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 활용법 (요약) -->
+<section class="section section--ivory">
+  <div class="container" data-reveal>
+    <p class="eyebrow">How to Brew</p>
+    <h2 class="h-title">원물 달이는 법 · 세 단계</h2>
+
+    <div class="steps mt-5">
+      <div class="step">
+        <h3 class="h-sub">물에 담그기</h3>
+        <p>원물 30g 기준 물 2L. 1시간 정도 두어 결이 부드러워지게 합니다.</p>
+      </div>
+      <div class="step">
+        <h3 class="h-sub">중약불에 끓이기</h3>
+        <p>끓기 시작하면 약불로 줄여 2~3시간. 황갈색 탕액이 우러납니다.</p>
+      </div>
+      <div class="step">
+        <h3 class="h-sub">하루 두세 잔</h3>
+        <p>따뜻하게 또는 식혀서. 매일의 건강 습관에 곁들이는 한 잔.</p>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:var(--space-5);">진액·발효액은 별도 섭취 방법을 상세 페이지에 안내합니다.</p>
+  </div>
+</section>
+
+<!-- 6. 선물 제안 -->
+<section class="section section--walnut">
+  <div class="container" data-reveal>
+    <p class="eyebrow">Gift</p>
+    <h2 class="h-title">귀하게 여겨온 마음을, 정성스럽게.</h2>
+    <p class="lead">부모님, 명절, 거래처, 감사 인사 — 격식 있는 자리에 어울리는 단정한 포장.</p>
+    <div class="hero__cta mt-7">
+      <a class="btn btn--cta" href="/product/list.html?cate_no=27">선물 세트 보기</a>
+      <a class="btn btn--ghost" href="/board/qna/">대량 주문 문의</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. 인증 · 이력 그리드 -->
+<section class="section section--ivory">
+  <div class="container" data-reveal>
+    <p class="eyebrow">Certifications</p>
+    <h2 class="h-title">정돈된 신뢰</h2>
+    <div class="cert-grid mt-5">
+      <div class="cert-tile">유기농 인증</div>
+      <div class="cert-tile">국내 재배</div>
+      <div class="cert-tile">위생 등급</div>
+      <div class="cert-tile">FDA 등록</div>
+      <div class="cert-tile">신뢰 셀러</div>
+      <div class="cert-tile">생산이력 추적</div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. 구매 · 문의 -->
+<section class="section section--dark">
+  <div class="container text-center" data-reveal>
+    <p class="eyebrow">Contact</p>
+    <h2 class="h-title">궁금한 점은 언제든 문의 주세요</h2>
+    <p class="lead" style="margin-inline:auto;">전화 · 카카오톡 채널 · 1:1 게시판으로 답해드립니다. 대량주문·선물포장 별도 상담 가능.</p>
+    <div class="hero__cta mt-7" style="justify-content:center;">
+      <a class="btn btn--cta" href="tel:000-0000-0000">전화 상담</a>
+      <a class="btn btn--ghost" href="https://pf.kakao.com/" target="_blank" rel="noopener">카카오 채널</a>
+      <a class="btn btn--ghost" href="/board/qna/">1:1 문의</a>
+    </div>
+  </div>
+</section>
