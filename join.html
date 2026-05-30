@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko" data-base="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>회원가입 · 금빛농원</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#231B12" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="join">
+  <div data-include="partials/header.html"></div>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="auth-shell">
+          <div class="center mb-3">
+            <span class="section-label">Join Geumbit</span>
+            <h1 class="h-2 mt-1">회원가입</h1>
+          </div>
+          <div class="card-pad">
+            <form class="form-grid" style="max-width:none;" data-stub-form="시안 — 회원가입은 운영(Cafe24) 전환 시 활성화됩니다.">
+              <div class="form-row"><label for="jn-name">이름 <span class="req">*</span></label><input class="field" id="jn-name" type="text" required /></div>
+              <div class="form-row"><label for="jn-id">이메일 <span class="req">*</span></label><input class="field" id="jn-id" type="email" required /></div>
+              <div class="form-row"><label for="jn-pw">비밀번호 <span class="req">*</span></label><input class="field" id="jn-pw" type="password" required /></div>
+              <div class="form-row"><label for="jn-pw2">비밀번호 확인 <span class="req">*</span></label><input class="field" id="jn-pw2" type="password" required /></div>
+              <div class="form-row"><label for="jn-tel">휴대전화</label><input class="field" id="jn-tel" type="tel" placeholder="010-0000-0000" /></div>
+              <label style="display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:var(--ink-soft);"><input type="checkbox" required style="margin-top:5px;" /> <span><a class="text-link" href="terms.html">이용약관</a> 및 <a class="text-link" href="privacy.html">개인정보처리방침</a>에 동의합니다. <span class="req">*</span></span></label>
+              <button class="btn btn-fill btn-block" type="submit">가입하기</button>
+            </form>
+          </div>
+          <p class="stub-note mt-2" style="display:flex;justify-content:center;">시안 — 실제 가입은 동작하지 않습니다.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

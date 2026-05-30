@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /cart.html
+Disallow: /login.html
+Disallow: /join.html
+Disallow: /mypage.html
+
+Sitemap: https://w2er1702-boop.github.io/geumbit-farm/sitemap.xml

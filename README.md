@@ -1,122 +1,90 @@
-# 금빛농원 GEUMBIT FARM — Brand Site
+# 금빛농원 GEUMBIT FARM — 브랜드/판매 홈페이지 (시안)
 
-Next.js 15 (App Router · Static Export) + TypeScript + Tailwind CSS 4 + next-intl 기반의 금빛농원(GEUMBIT FARM) 다국어(KO/EN/ZH) 브랜드 사이트. GitHub Pages에 정적 배포되며, 식스샵 쇼핑몰 개설 시 환경변수만 바꾸면 모든 구매 버튼이 식스샵 URL로 자동 라우팅된다.
+연천 한탄강 자락에서 키운 유기농 황금상황버섯 브랜드 **금빛농원**의 정적 홈페이지 시안.
 
-배포 URL: <https://w2er1702-boop.github.io/geumbit-farm/>
+- **기술 스택:** 순수 정적 멀티페이지 — HTML + CSS + 바닐라 JS. 빌드 툴 없음.
+- **설계 의도:** 최종 타깃인 **Cafe24 스마트디자인**(HTML/CSS/JS 기반)으로의 이식 직접성. 자세한 사양은 [`SPEC.md`](./SPEC.md) 참조.
+- **배포:** GitHub Pages — `main` 브랜치 push 시 자동 배포.
+- **배포 URL:** <https://w2er1702-boop.github.io/geumbit-farm/>
 
 ---
 
 ## 1. 로컬 실행
 
-```bash
-npm install
-npm run dev          # http://localhost:3000/ko (또는 /en, /zh)
-```
-
-> 한국어는 빌드 시 후처리 단계에서 `/`로 이동된다. 개발 서버에서는 `/ko`로 접근한다.
-
-## 2. 빌드 및 정적 미리보기
+빌드가 필요 없다. 정적 서버로 열기만 하면 된다. (`file://` 직접 열기는 partial include의 `fetch` 때문에 동작하지 않으므로 반드시 서버로 실행.)
 
 ```bash
-npm run build        # next build → out/ 생성 → postbuild로 /ko/* 를 루트로 이동
-npx serve out        # http://localhost:3000 에서 미리보기 (basePath는 빠짐)
+python3 -m http.server 8000
+# http://localhost:8000 접속
 ```
 
-## 3. 환경 변수
-
-`.env.example`를 참고. 로컬에서는 `.env.local`을 만들고, GitHub Actions에서는 Repository **Variables**에 등록한다.
-
-| 변수 | 용도 | 기본값 |
-|---|---|---|
-| `NEXT_PUBLIC_SIXSHOP_URL` | 식스샵 도메인 (개설 후 입력) | (비어 있음) |
-| `NEXT_PUBLIC_NAVER_STORE_URL` | 네이버 스토어 fallback | `https://smartstore.naver.com/ycgoldenfarm` |
-| `NEXT_PUBLIC_CONTACT_ENDPOINT` | (현재 미사용) | 비어 있음 |
-| `NEXT_PUBLIC_SITE_URL` | OG·sitemap의 절대 URL | `https://w2er1702-boop.github.io/geumbit-farm` |
-
-`NEXT_PUBLIC_SIXSHOP_URL`이 설정되어 있고 상품에 `sixshopSlug`가 채워져 있으면 식스샵으로, 아니면 네이버 스마트스토어로 자동 라우팅된다.
-
-## 4. 콘텐츠 / 자산 채우기 체크리스트
-
-코드에는 모든 경로가 잡혀 있으므로 아래 파일만 채우면 된다.
-
-- [ ] `public/logo.png` — GEUMBIT FARM 로고
-- [ ] `public/logo.svg` — SVG 원본 (있다면)
-- [ ] `public/og-default.jpg` — 기본 OG 이미지 (1200×630)
-- [ ] `public/farm/hero.jpg` — 홈/농장 페이지 히어로
-- [ ] `public/farm/farm-1.jpg` ~ `farm-6.jpg` — 농장 페이지 갤러리
-- [ ] `public/products/{slug}.jpg` 9개 — 네이버 스토어 `ycgoldenfarm`에서 다운로드 후 저장
-  - `oak-sanghwang-30g`, `oak-sanghwang-100g`
-  - `golden-sanghwang-slice-250g`, `golden-sanghwang-slice-500g`
-  - `golden-sanghwang-whole-250g`, `golden-sanghwang-whole-500g`
-  - `golden-sanghwang-jinaek`
-  - `sanghwang-set-500g`
-  - `golden-sanghwang-fermented`
-- [ ] `public/certifications/` — 인증서 이미지/PDF
-- [ ] `data/brand.json` — `story` 등의 placeholder를 실제 텍스트로 교체
-- [ ] `data/certifications.json` — 보유 인증 항목 채우기 (`id`, `name`, `issuer`, `issuedAt`, `image`, `pdf`)
-
-이미지가 없으면 카드에는 자동으로 "이미지 준비 중 · 桑黃" placeholder가 표시된다.
-
-## 5. GitHub Pages 배포 (자동)
-
-main 브랜치에 push되면 `.github/workflows/deploy.yml`이 자동 실행된다.
-
-### 5.1 최초 1회만 — GitHub 측 수동 설정
-
-1. 저장소 **Settings → Pages → Build and deployment → Source** 를 **GitHub Actions** 로 변경.
-2. (선택) **Settings → Secrets and variables → Actions → Variables** 탭에서 위 §3의 4개 변수를 등록.
-
-설정이 끝나면 다음 push부터 워크플로가 성공한다.
-
-### 5.2 첫 배포 확인
-
-워크플로 완료 후 다음 URL 접속:
+## 2. 디렉토리 구조
 
 ```
-https://w2er1702-boop.github.io/geumbit-farm/
+/
+├─ SPEC.md                  # 빌드 지시서 (v2.0)
+├─ index.html               # HOME
+├─ story.html               # OUR STORY
+├─ products.html            # 제품 목록 (필터 + 그리드)
+├─ product-detail.html      # 제품 상세 (?p=slug)
+├─ reviews.html             # 후기
+├─ community.html           # 공지/Q&A/FAQ
+├─ cart/login/join/mypage.html   # 커머스 stub (비동작 UI 셸)
+├─ support.html             # 고객센터
+├─ terms/privacy/guide.html # 정책/안내
+├─ robots.txt · sitemap.xml · .nojekyll
+├─ assets/
+│  ├─ css/style.css         # 전역 스타일 + 디자인 토큰 (SPEC 2-1)
+│  ├─ js/main.js            # 드로어/탭/아코디언/reveal/갤러리/include
+│  ├─ js/products.js        # 제품 데이터 + 카드 렌더러
+│  └─ img/{photo,gen,logo}/ # 실사 / AI 생성 / 로고
+└─ partials/                # header.html · footer.html (JS include)
 ```
 
-404가 뜨면:
-- `out/.nojekyll` 존재 확인 (postbuild가 자동 생성)
-- `next.config.mjs`의 `basePath: '/geumbit-farm'` 확인
-- Actions 탭 로그 확인
+## 3. 공통 헤더/푸터
 
-## 6. 커스텀 도메인 연결 (선택)
+`partials/header.html`, `partials/footer.html`를 각 페이지에서 `<div data-include="...">`로 불러온다(`assets/js/main.js`의 경량 include). 모든 경로는 상대경로라 GitHub Pages 서브경로(`/geumbit-farm/`)에서도 그대로 동작한다.
 
-1. `next.config.mjs`에서 `const useCustomDomain = true;` 로 변경 → `basePath`/`assetPrefix` 자동 비활성화.
-2. `public/CNAME` 파일에 도메인 한 줄 (`geumbitfarm.com` 등) 작성.
-3. DNS:
-   - apex: A 레코드 → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - www: CNAME → `w2er1702-boop.github.io`
-4. **Settings → Pages → Custom domain** 에 도메인 입력 후 **Enforce HTTPS** 체크.
-5. Variables의 `NEXT_PUBLIC_SITE_URL` 을 새 도메인으로 업데이트 후 재배포.
+## 4. 제품 데이터
 
-## 7. 식스샵 전환 (개설 후)
+`assets/js/products.js`의 `PRODUCTS` 배열이 단일 출처다. 가격·네이버 상품번호는 운영값 기반, 별점/후기수는 샘플이다. 구매 버튼은 네이버 스마트스토어(`ycgoldenfarm`)로 라우팅되며, 운영 전환 시 Cafe24 상품모듈로 교체한다.
 
-1. 식스샵 관리자에서 각 상품의 slug(URL path) 확인.
-2. `data/products.json`의 각 항목 `sixshopSlug` 필드에 그 값을 입력.
-3. GitHub Actions Variables의 `NEXT_PUBLIC_SIXSHOP_URL` 을 식스샵 도메인으로 설정 (예: `https://geumbitfarm.com`).
-4. main에 빈 커밋을 push하거나 Actions 탭에서 워크플로 수동 재실행.
+## 5. 이미지
 
-코드 변경 없이 모든 BuyButton이 식스샵으로 라우팅된다.
+- **실사**(제품·농장): `assets/img/photo/{slug}.jpg`. 없으면 자동으로 "桑黃" placeholder 블록이 표시된다.
+- **AI 생성 배경**(배너·무드): `assets/img/gen/GEN_*.webp`. 현재 5종 생성 완료 — `GEN_HERO_BG`, `GEN_STORY_HERO`, `GEN_CULTIVATION`, `GEN_GIFT_BANNER`, `GEN_NEWSLETTER_BG`.
+- 배너 텍스트는 이미지에 굽지 않고 HTML/CSS로 오버레이한다(SPEC 6-1).
 
-## 8. 디자인 시스템 요약
+채워야 할 슬롯:
+- [ ] `assets/img/photo/{slug}.jpg` 9종 — 네이버 스토어 실사
+- [ ] `assets/img/photo/` PDP 메인/썸네일/상세컷, 농장·대표 실사
+- [ ] `assets/img/gen/` 미생성 슬롯 (GEN_CRAFT_HANDS 등) — 필요 시 추가 생성
+- [ ] 회사정보·CS·SNS·사업자번호 등 `[샘플]` 값 (footer 및 정책 페이지)
 
-- 콘셉트: Editorial Luxury × Korean Heritage Apothecary
-- 색: Onyx / Heritage Gold / Oxblood / Parchment
-- 폰트: Noto Serif KR · Cinzel · Noto Serif SC · Pretendard · EB Garamond · JetBrains Mono
-- 시그니처 요소: 세로 한자 장식, 골드 룰, 이중 보더 카드, 종이 질감 노이즈
+## 6. GitHub Pages 배포
 
-`app/globals.css`에 모든 토큰이 CSS 변수 + `@theme` 블록으로 정의되어 있다.
+`main`에 push되면 `.github/workflows/deploy.yml`이 저장소 루트를 그대로 Pages에 업로드한다(빌드 없음).
 
-## 9. 콘텐츠 / 표시 가이드
+최초 1회: **Settings → Pages → Build and deployment → Source** 를 **GitHub Actions** 로 설정.
 
-- 의약품적 효능 단정 표현(암 치료, 면역증강 보장 등) 금지.
-- B2B 거래처 명시(정관장 등) 금지. "국내 굴지의 건강식품 기업 원물 공급" 까지만 우회.
-- 모든 상품은 일반 식품 표시 가이드 준수.
+> `.nojekyll`이 있어 Jekyll 처리 없이 `assets/`가 그대로 배포된다.
 
-## 10. 트러블슈팅
+## 7. SEO / 접근성
 
-- **개발 서버에서 `/` 404**: 개발 모드에서는 `/ko`, `/en`, `/zh` 로 접근. 프로덕션 빌드에서는 postbuild가 `/`를 자동으로 한국어로 만든다.
-- **이미지가 안 보임**: `public/products/{slug}.jpg` 존재 확인. 없으면 placeholder가 표시되므로 정상.
-- **빌드 시 폰트 에러**: 네트워크 제한 환경이면 `app/[locale]/layout.tsx`의 `next/font/google` import가 실패할 수 있다. CI에서는 정상.
+- 각 페이지 `<title>`·`meta description`·OG 태그.
+- `sitemap.xml` / `robots.txt` 포함. 운영 시 **네이버 서치어드바이저**에 사이트 등록 및 사이트맵 제출 권장(`naver-site-verification` 메타 추가).
+- 이미지 `alt`, 폼 `label`, 포커스 스타일, 명도 대비, `prefers-reduced-motion` 대응.
+
+## 8. 컴플라이언스 (SPEC 3장)
+
+- **효능 표현 금지** — 일반식품으로 포지셔닝. 면역·항암·치료·예방 등 기능성 표현 금지.
+- **거래처 직접 명시 금지** — "국내 유수 건강식품 기업에 원물 공급" 식 간접 표현만.
+- 후기에 질병 치료·효능 체험담 노출 금지.
+- AI 생성 가짜 제품/패키지컷 사용 금지(제품은 실사만).
+
+## 9. Cafe24 이식 (운영 전환)
+
+정적 HTML/CSS/JS를 스마트디자인 스킨으로 이식. 커머스 영역(목록·상세·옵션·장바구니·회원·주문)은 Cafe24 module/변수로 교체. 자세한 내용은 `SPEC.md` 9장.
+
+---
+*디자인/카피/구성은 제안·샘플이며, 운영값 교체와 표시광고 컴플라이언스 검토가 필요합니다.*

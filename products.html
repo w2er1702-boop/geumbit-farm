@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko" data-base="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>제품 — 유기농 황금상황버섯 · 금빛농원</title>
+  <meta name="description" content="연천 농장직송 유기농 황금상황버섯 원물·슬라이스·진액·발효액·선물세트. 정직한 표기로 안내합니다." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="제품 — 유기농 황금상황버섯 · 금빛농원" />
+  <meta property="og:description" content="원물·슬라이스·진액·발효액·선물세트" />
+  <meta property="og:image" content="assets/img/gen/GEN_HERO_BG.webp" />
+  <meta name="theme-color" content="#231B12" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="products">
+  <div data-include="partials/header.html"></div>
+
+  <main>
+    <section class="page-hero bg-paper-2">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">HOME</a><span class="sep">/</span>제품</p>
+        <span class="section-label mt-1">Products</span>
+        <h1 class="h-1">금빛농원 제품</h1>
+        <p class="lead" style="max-width:46ch;margin-inline:auto;">참나무 원목에서 키운 원물부터 간편한 진액까지, 자연 그대로 담았습니다.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="chips mb-3" data-product-filters data-reveal aria-label="제품 필터"></div>
+        <div class="grid grid-4" data-products-grid data-filterable></div>
+      </div>
+    </section>
+
+    <!-- 선물세트 배너 (다크 · 텍스트 HTML 오버레이) -->
+    <section class="section tight">
+      <div class="container">
+        <div class="banner" data-reveal>
+          <div class="banner-bg"><img src="assets/img/gen/GEN_GIFT_BANNER.webp" alt="" aria-hidden="true" onload="this.classList.add('loaded')" /></div>
+          <div class="banner-inner">
+            <span class="section-label">Gift Collection</span>
+            <h2 class="h-2 mt-1">마음을 전하는<br />금빛 선물세트</h2>
+            <p class="lead">원물과 슬라이스를 함께 담은 구성으로, 귀한 분께 정성을 전하세요.</p>
+            <a class="btn btn-gold mt-2" href="product-detail.html?p=sanghwang-set-500g">선물세트 보기 <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

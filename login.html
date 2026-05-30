@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" data-base="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>로그인 · 금빛농원</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#231B12" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="login">
+  <div data-include="partials/header.html"></div>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="auth-shell">
+          <div class="center mb-3">
+            <span class="section-label">Welcome back</span>
+            <h1 class="h-2 mt-1">로그인</h1>
+          </div>
+          <div class="card-pad">
+            <form class="form-grid" style="max-width:none;" data-stub-form="시안 — 로그인은 운영(Cafe24) 전환 시 활성화됩니다.">
+              <div class="form-row"><label for="lg-id">이메일</label><input class="field" id="lg-id" type="email" placeholder="you@example.com" required /></div>
+              <div class="form-row"><label for="lg-pw">비밀번호</label><input class="field" id="lg-pw" type="password" placeholder="비밀번호" required /></div>
+              <button class="btn btn-fill btn-block" type="submit">로그인</button>
+            </form>
+            <div class="center mt-2" style="font-size:.86rem;">
+              <a class="muted" href="#" data-stub="시안 — 비밀번호 찾기는 운영 시 동작합니다.">비밀번호 찾기</a>
+              <span class="sep">·</span>
+              <a class="text-link" href="join.html">회원가입</a>
+            </div>
+          </div>
+          <p class="stub-note mt-2" style="display:flex;justify-content:center;">시안 — 실제 인증은 동작하지 않습니다.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

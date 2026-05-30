@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko" data-base="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COMMUNITY — 공지 · Q&amp;A · FAQ · 금빛농원</title>
+  <meta name="description" content="금빛농원 공지사항, 문의(Q&A), 자주 묻는 질문." />
+  <meta property="og:title" content="COMMUNITY · 금빛농원" />
+  <meta property="og:image" content="assets/img/gen/GEN_HERO_BG.webp" />
+  <meta name="theme-color" content="#231B12" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="community">
+  <div data-include="partials/header.html"></div>
+
+  <main>
+    <section class="page-hero bg-paper-2">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">HOME</a><span class="sep">/</span>COMMUNITY</p>
+        <span class="section-label mt-1">Community</span>
+        <h1 class="h-1">커뮤니티</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <div class="tabs" data-tabs role="tablist" aria-label="커뮤니티 탭">
+          <button class="tab" role="tab" id="t-notice" aria-controls="p-notice" aria-selected="true">공지사항</button>
+          <button class="tab" role="tab" id="t-qna" aria-controls="p-qna" aria-selected="false">Q&amp;A</button>
+          <button class="tab" role="tab" id="t-faq" aria-controls="p-faq" aria-selected="false">FAQ</button>
+        </div>
+
+        <!-- 공지사항 -->
+        <div class="tabpanel" role="tabpanel" id="p-notice" aria-labelledby="t-notice">
+          <table class="list-table">
+            <thead><tr><th style="width:64px;">번호</th><th>제목</th><th style="width:120px;">작성일</th></tr></thead>
+            <tbody>
+              <tr><td class="pin">공지</td><td><a href="#" data-stub="시안 — 게시글 상세는 운영 시 연결됩니다.">[안내] 봄 수확 원물 입고 및 배송 일정 안내</a></td><td>2026.04.18</td></tr>
+              <tr><td class="pin">공지</td><td><a href="#" data-stub="시안 — 게시글 상세는 운영 시 연결됩니다.">전 상품 무료배송 정책 안내</a></td><td>2026.03.02</td></tr>
+              <tr><td>12</td><td><a href="#" data-stub="시안 — 게시글 상세는 운영 시 연결됩니다.">설 연휴 배송 마감 안내</a></td><td>2026.02.05</td></tr>
+              <tr><td>11</td><td><a href="#" data-stub="시안 — 게시글 상세는 운영 시 연결됩니다.">선물세트 포장 옵션 추가 안내</a></td><td>2026.01.20</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Q&A -->
+        <div class="tabpanel" role="tabpanel" id="p-qna" aria-labelledby="t-qna" hidden>
+          <table class="list-table">
+            <thead><tr><th style="width:64px;">상태</th><th>제목</th><th style="width:120px;">작성일</th></tr></thead>
+            <tbody>
+              <tr><td class="gold">답변완료</td><td><a href="#" data-stub="시안 — Q&A 상세는 운영 시 연결됩니다.">슬라이스와 원물 중 어떤 걸 고를까요?</a></td><td>2026.04.12</td></tr>
+              <tr><td class="muted">접수</td><td><a href="#" data-stub="시안 — Q&A 상세는 운영 시 연결됩니다.">선물 포장 가능한가요?</a></td><td>2026.04.09</td></tr>
+              <tr><td class="gold">답변완료</td><td><a href="#" data-stub="시안 — Q&A 상세는 운영 시 연결됩니다.">보관은 어떻게 하면 되나요?</a></td><td>2026.03.30</td></tr>
+            </tbody>
+          </table>
+          <div class="center mt-3"><button class="btn btn-out" type="button" data-stub="시안 — 문의 작성은 로그인 후 이용 가능합니다.">문의 작성</button></div>
+        </div>
+
+        <!-- FAQ (아코디언) -->
+        <div class="tabpanel" role="tabpanel" id="p-faq" aria-labelledby="t-faq" hidden>
+          <div class="accordion">
+            <div class="acc-item">
+              <button class="acc-q" type="button">상황버섯은 어떻게 즐기나요?<span class="pmark" aria-hidden="true"></span></button>
+              <div class="acc-a"><div class="acc-a-inner">슬라이스·원물은 물에 충분히 우려 차로 즐기시고, 진액·발효액은 하루 한 포(잔)를 기준으로 꾸준히 즐기시길 권합니다. 본 제품은 일반식품입니다.</div></div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-q" type="button">원산지와 재배 방식이 궁금합니다.<span class="pmark" aria-hidden="true"></span></button>
+              <div class="acc-a"><div class="acc-a-inner">경기 연천 한탄강 자락의 청정 재배지에서 참나무 원목으로 키운 국산 황금상황버섯입니다. 당일 수확·당일 가공을 원칙으로 합니다.</div></div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-q" type="button">배송은 얼마나 걸리나요?<span class="pmark" aria-hidden="true"></span></button>
+              <div class="acc-a"><div class="acc-a-inner">평일 14시 이전 주문 시 당일 출고되며, 택배사 사정에 따라 1~3일 소요됩니다. 전 상품 무료배송입니다.</div></div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-q" type="button">교환·반품이 가능한가요?<span class="pmark" aria-hidden="true"></span></button>
+              <div class="acc-a"><div class="acc-a-inner">식품 특성상 단순변심에 의한 반품은 제한될 수 있습니다. 배송 중 파손·오배송은 수령 후 7일 이내 고객센터로 연락 주세요.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
