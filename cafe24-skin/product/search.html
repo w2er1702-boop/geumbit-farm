@@ -1,0 +1,36 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!-- 상품 검색 결과 — 카페24 표준 경로 /product/search.html -->
+
+<section class="page-head">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--c-gold);">Search</p>
+    <h1>"{$search_keyword}" 검색 결과</h1>
+    <p>총 <strong>{$product_count}</strong>개 상품</p>
+  </div>
+</section>
+
+<section class="section section--ivory">
+  <div class="container">
+
+    <form action="/product/search.html" method="get" style="display:flex; gap:var(--space-3); margin-bottom:var(--space-6);">
+      <input type="text" name="keyword" value="{$search_keyword}" placeholder="상품 검색"
+             style="flex:1; height:48px; padding:0 var(--space-4); border:1px solid var(--c-line); border-radius:var(--r-sm); font:inherit;" />
+      <button type="submit" class="btn btn--primary">검색</button>
+    </form>
+
+    <div class="product-grid product-grid--lg" module="product_listsearch">
+      <a class="product-card" href="/product/detail.html?product_no={$product_no}">
+        <div class="product-card__img"><img src="{$image_medium}" alt="{$product_name}" /></div>
+        <div class="product-card__body">
+          <h3 class="product-card__name">{$product_name}</h3>
+          <div class="price">
+            <span class="price__list">{$product_price}원</span>
+            <span class="price__sale">{$product_sale_price}<span class="unit">원</span></span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="text-center" style="margin-top:var(--space-7);" module="product_paging">{$paging}</div>
+  </div>
+</section>

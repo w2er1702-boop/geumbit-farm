@@ -1,0 +1,50 @@
+<!-- =====================================================
+     Header / GNB  (설계서 §4.1)
+     URL은 카페24 표준 경로. 게시판/카테고리 번호는 어드민 등록 후
+     실제 번호로 치환 (예: ?board_no=4 → 공지사항 게시판 번호)
+     ===================================================== -->
+<header class="site-header" role="banner">
+  <div class="container site-header__inner">
+    <a class="site-logo" href="/" aria-label="{$mall_name} 홈">
+      <strong>금빛농원</strong> <span style="opacity:.55; font-family:var(--ff-deco); margin-left:6px;">GEUMBIT FARM</span>
+    </a>
+
+    <nav class="gnb" aria-label="주요 메뉴">
+      <a href="/product/list.html?cate_no=24">상품</a>
+      <a href="/board.html?board_no=8">브랜드 스토리</a>
+      <a href="/board.html?board_no=4">공지사항</a>
+      <a href="/board.html?board_no=6">1:1 문의</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="/member/login.html" aria-label="로그인 / 마이페이지">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </a>
+      <a href="/order/basket.html" aria-label="장바구니">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <!-- 카페24 장바구니 수량 변수 -->
+        <span class="cart-badge" data-cart-badge>{$basket_count|default:0}</span>
+      </a>
+      <button class="hamburger" type="button" data-drawer-open aria-label="메뉴 열기">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="4" y1="7"  x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__panel" role="dialog" aria-modal="true">
+    <button type="button" data-drawer-close aria-label="메뉴 닫기" style="align-self:flex-end;">✕</button>
+    <a href="/product/list.html?cate_no=24">상품 전체</a>
+    <a href="/product/list.html?cate_no=25">원물(30g~500g)</a>
+    <a href="/product/list.html?cate_no=26">슬라이스</a>
+    <a href="/product/list.html?cate_no=27">혼합 세트</a>
+    <a href="/product/list.html?cate_no=28">진액</a>
+    <a href="/product/list.html?cate_no=29">발효액</a>
+    <a href="/board.html?board_no=8">브랜드 스토리</a>
+    <a href="/board.html?board_no=4">공지사항</a>
+    <a href="/board.html?board_no=6">1:1 문의</a>
+    <a href="/member/login.html">로그인 · 회원가입</a>
+  </div>
+</div>

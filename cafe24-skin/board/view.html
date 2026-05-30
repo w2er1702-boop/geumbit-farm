@@ -1,0 +1,39 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!-- =====================================================
+     게시판 보기 (§4.6)
+     ===================================================== -->
+
+<section class="page-head">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--c-gold);">Board · {$board_name}</p>
+    <h1>{$subject}</h1>
+    <p style="font-size:var(--fs-small);">{$writer} · {$date} · 조회 {$hits}</p>
+  </div>
+</section>
+
+<section class="section section--ivory">
+  <div class="container" style="max-width:880px;">
+
+    <article module="board_view" style="line-height:var(--lh-base);">
+      {$content}
+    </article>
+
+    <hr class="rule-brass" />
+
+    <div style="display:flex; gap:var(--space-3); justify-content:space-between;">
+      <a class="btn btn--ghost" href="{$list_url}" style="color:var(--c-walnut);border-color:var(--c-line);">목록</a>
+      <div style="display:flex; gap:var(--space-3);">
+        <a class="btn btn--ghost" href="{$prev_url}" style="color:var(--c-walnut);border-color:var(--c-line);">이전 글</a>
+        <a class="btn btn--ghost" href="{$next_url}" style="color:var(--c-walnut);border-color:var(--c-line);">다음 글</a>
+      </div>
+    </div>
+
+    <section style="margin-top:var(--space-8);">
+      <h2 class="h-sub">댓글</h2>
+      <div module="board_comment">
+        {$comment_html}
+      </div>
+    </section>
+
+  </div>
+</section>

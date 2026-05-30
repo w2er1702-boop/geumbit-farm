@@ -1,0 +1,123 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!-- =====================================================
+     상품 목록(카테고리)  — 설계서 §4.3
+     ===================================================== -->
+
+<section class="page-head">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--c-gold);">Product</p>
+    <h1>{$category_name|default:'상황버섯, 결대로 고르다'}</h1>
+    <p>원물·슬라이스·혼합세트·진액·발효액 — 다섯 가지 결로 정리했습니다.</p>
+  </div>
+</section>
+
+<section class="section section--ivory">
+  <div class="container">
+
+    <!-- 카테고리 소개 카피 -->
+    <div data-reveal style="max-width:60ch; margin-bottom:var(--space-7);">
+      <p class="lead">{$category_description}</p>
+    </div>
+
+    <!-- 정렬 / 필터 영역 (카페24 기본 모듈 자리) -->
+    <div class="board-toolbar">
+      <span style="color:var(--c-text-mute); font-size:var(--fs-small);">
+        총 <strong>{$product_count}</strong>개 상품
+      </span>
+      <!-- module="product_listheader" — 정렬/뷰 옵션 모듈 -->
+      <div module="product_listheader">
+        <select aria-label="정렬">
+          <option>신상품순</option>
+          <option>인기상품순</option>
+          <option>낮은가격순</option>
+          <option>높은가격순</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 상품 리스트 모듈 -->
+    <!-- module: product_listnormal_1 — 카페24 상품 리스트 모듈
+         카페24가 자동 반복 렌더링하므로 실제 운영 시에는 카드 1개만 두고 변수만 매핑한다.
+         아래는 마크업 톤만 잡은 placeholder. -->
+    <div class="product-grid product-grid--lg" module="product_listnormal">
+
+      <a class="product-card" href="/product/detail.html?product_no={$product_no}">
+        <div class="product-card__img">
+          <img src="{$image_medium}" alt="{$product_name}" />
+        </div>
+        <div class="product-card__body">
+          <span class="product-card__tag">국산 · 농장직송</span>
+          <h3 class="product-card__name">{$product_name}</h3>
+          <div class="price">
+            <span class="price__list">{$product_price}원</span>
+            <span class="price__sale">{$product_sale_price}<span class="unit">원</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 1차 정적 placeholder (시각 확인용 — 운영 시 제거) -->
+      <a class="product-card" href="#">
+        <div class="product-card__img"></div>
+        <div class="product-card__body">
+          <span class="product-card__tag">원물 30g · 100g · 250g · 500g</span>
+          <h3 class="product-card__name">상황버섯 원물</h3>
+          <div class="price">
+            <span class="price__list">14,000원</span>
+            <span class="price__sale">12,000<span class="unit">원~</span></span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="#">
+        <div class="product-card__img"></div>
+        <div class="product-card__body">
+          <span class="product-card__tag">슬라이스 250g · 500g</span>
+          <h3 class="product-card__name">상황버섯 슬라이스</h3>
+          <div class="price">
+            <span class="price__list">125,000원</span>
+            <span class="price__sale">97,500<span class="unit">원~</span></span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="#">
+        <div class="product-card__img"></div>
+        <div class="product-card__body">
+          <span class="product-card__tag">선물 추천</span>
+          <h3 class="product-card__name">원물+슬라이스 혼합 500g</h3>
+          <div class="price">
+            <span class="price__list">240,000원</span>
+            <span class="price__sale">189,600<span class="unit">원</span></span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="#">
+        <div class="product-card__img"></div>
+        <div class="product-card__body">
+          <span class="product-card__tag">90ml × 30포</span>
+          <h3 class="product-card__name">상황버섯 진액</h3>
+          <div class="price">
+            <span class="price__list">140,000원</span>
+            <span class="price__sale">112,000<span class="unit">원</span></span>
+          </div>
+        </div>
+      </a>
+      <a class="product-card" href="#">
+        <div class="product-card__img"></div>
+        <div class="product-card__body">
+          <span class="product-card__tag">1박스</span>
+          <h3 class="product-card__name">상황버섯 발효액</h3>
+          <div class="price">
+            <span class="price__list">275,000원</span>
+            <span class="price__sale">220,000<span class="unit">원</span></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- 페이지네이션 -->
+    <div class="text-center" style="margin-top:var(--space-7);" module="product_paging">
+      {$paging}
+    </div>
+
+  </div>
+</section>

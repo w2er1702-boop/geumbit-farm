@@ -1,0 +1,19 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!-- 회원가입 — 카페24 module=member_join -->
+
+<section class="page-head">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--c-gold);">Member</p>
+    <h1>회원가입</h1>
+    <p>금빛농원의 새로운 소식과 회원 혜택을 가장 먼저 받아보세요.</p>
+  </div>
+</section>
+
+<section class="section section--ivory">
+  <div class="container" style="max-width:640px;">
+    <!-- 카페24 회원가입 모듈이 약관·필드를 자동 렌더 -->
+    <div module="member_join">
+      {$join_form_html}
+    </div>
+  </div>
+</section>
