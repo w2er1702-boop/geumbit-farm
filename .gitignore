@@ -1,11 +1,11 @@
-node_modules
-.next
-out
-*.log
-.env
-.env.local
-.env*.local
+# 카페24 업로드용 ZIP 빌드 산출물
+geumbit-skin-*.zip
+
+# 로컬 환경
 .DS_Store
-.vscode
-.idea
-next-env.d.ts
+*.log
+node_modules/
+
+# 시안 빌드 산출물은 트래킹 (검토용으로 사용)
+# preview/*.html
+# preview/*.png
