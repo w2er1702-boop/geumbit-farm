@@ -43,15 +43,33 @@ function resolveImports(html) {
   });
 }
 // mode: 'legacy' (preview/ 절대경로 → ../cafe24-skin/css/...)
-//       'site'   (preview/site/ 상대경로 → css/..., js/...)
+//       'site'   (preview/site/ 상대경로 → css/..., js/...; 서브패스 배포 안전)
 function resolveCssJs(html, mode) {
-  const cssBase = mode === 'site' ? '' : '../cafe24-skin';
-  const jsBase  = mode === 'site' ? '' : '../cafe24-skin';
+  const toPath = (raw) => {
+    const clean = raw.split('?')[0];
+    return mode === 'site'
+      ? clean.replace(/^\//, '')          // 절대 → 상대 (서브패스 안전)
+      : `../cafe24-skin${clean}`;
+  };
   html = html.replace(/<!--@css\(([^)]+)\)-->/g,
-    (_, p) => `<link rel="stylesheet" href="${cssBase}${p.split('?')[0]}" />`);
+    (_, p) => `<link rel="stylesheet" href="${toPath(p)}" />`);
   html = html.replace(/<!--@js\(([^)]+)\)-->/g,
-    (_, p) => `<script src="${jsBase}${p.split('?')[0]}"></script>`);
+    (_, p) => `<script src="${toPath(p)}"></script>`);
   return html;
+}
+
+// 카페24 내부 링크를 프리뷰 파일로 매핑, 미지원 링크는 # 처리
+function rewriteInternalLinks(html, mode) {
+  if (mode !== 'site') return html;
+  return html
+    .replace(/href="\/product\/list\.html[^"]*"/g,       'href="product-list.html"')
+    .replace(/href="\/product\/detail\.html[^"]*"/g,     'href="product-detail.html"')
+    .replace(/href="\/board\.html\?board_no=8"/g,        'href="story.html"')
+    .replace(/href="\/board\.html\?board_no=4"/g,        'href="#"')
+    .replace(/href="\/board\.html\?board_no=6"/g,        'href="#"')
+    .replace(/href="\/member\/login\.html"/g,            'href="#"')
+    .replace(/href="\/order\/basket\.html"/g,            'href="#"')
+    .replace(/href="\/"/g,                               'href="./"');
 }
 
 function buildPage({ src, outLegacy, outSite }) {
@@ -68,6 +86,7 @@ function buildPage({ src, outLegacy, outSite }) {
       '<!-- jQuery는 카페24가 기본 로드. 추가 스킨 스크립트만 연결 -->',
       '<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>'
     );
+    layout = rewriteInternalLinks(layout, mode);
     return layout;
   }
 
