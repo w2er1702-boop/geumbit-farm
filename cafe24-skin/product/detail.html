@@ -1,44 +1,43 @@
+<!--@layout(/layout/basic/layout.html)-->
 <!-- =====================================================
      상품 상세  — 설계서 §4.4
-     ★ 상단 구매영역은 카페24 모듈/변수 그대로 유지해야 한다 (§1.2 경고)
+     ★ 상단 구매영역은 카페24 모듈/변수 그대로 유지 (§1.2)
+     중량 옵션은 카페24 어드민 → 상품 → 옵션설정 에서 등록.
+     원물: 30g / 100g / 250g / 500g
+     슬라이스: 250g / 500g
+     혼합세트·진액·발효액: 단일 구성
      ===================================================== -->
 
 <section class="section section--ivory">
   <div class="container">
 
     <!-- ============== 상단 구매 영역 (모듈 자리) ============== -->
-    <!-- module: product_detail  -->
     <div class="pd-top" module="product_detail">
 
       <div class="pd-gallery">
-        <!-- 카페24 상품 이미지 모듈 -->
-        <img src="##image_large##" alt="##product_name##" />
+        <img src="{$image_large}" alt="{$product_name}" />
       </div>
 
       <div class="pd-info">
-        <p class="eyebrow">##brand_name##</p>
-        <h1>##product_name##</h1>
-        <p class="lead">##simple_description##</p>
+        <p class="eyebrow">{$brand_name}</p>
+        <h1>{$product_name}</h1>
+        <p class="lead">{$simple_description}</p>
 
         <div class="price" style="margin-top:var(--space-5);">
-          <span class="price__list">##product_price##원</span>
-          <span class="price__sale">##product_sale_price##<span class="unit">원</span></span>
+          <span class="price__list">{$product_price}원</span>
+          <span class="price__sale">{$product_sale_price}<span class="unit">원</span></span>
         </div>
-        <span class="badge-amber" style="margin-top:var(--space-3);">##discount_percent##% 할인</span>
+        <span class="badge-amber" style="margin-top:var(--space-3);">{$discount_percent}% 할인</span>
 
-        <div class="pd-options">
-          <label for="opt-weight">중량 옵션</label>
-          <!-- 카페24 옵션 셀렉트 자리. 실제 모듈이 옵션을 자동 렌더. -->
-          <select id="opt-weight" name="option1">
-            <option>선택해 주세요</option>
-            <option>250g</option>
-            <option>500g</option>
-          </select>
+        <!-- 카페24 옵션 자동 렌더 영역. 아래 markup은 자리 잡기용. -->
+        <div class="pd-options" module="product_option">
+          <label>중량 옵션</label>
+          {$option_html}
         </div>
 
         <div class="pd-options">
           <label for="qty">수량</label>
-          <input id="qty" type="number" min="1" value="1"
+          <input id="qty" type="number" min="1" value="1" name="quantity"
                  style="height:48px;width:100%;border:1px solid var(--c-line);border-radius:var(--r-sm);padding:0 var(--space-3);font:inherit;" />
         </div>
 
@@ -48,7 +47,7 @@
         </div>
 
         <p style="margin-top:var(--space-4); font-size:var(--fs-small); color:var(--c-text-mute);">
-          ##delivery_text##  ·  ##estimated_text##
+          {$delivery_text} · {$estimated_text}
         </p>
       </div>
 
@@ -86,8 +85,8 @@
       <p class="eyebrow">05 · Specs</p>
       <h2>구성 · 중량 안내</h2>
       <ul>
-        <li>중량: 250g / 500g</li>
-        <li>구성: 원물 또는 슬라이스</li>
+        <li>원물: 30g(입문) / 100g(실속) / 250g / 500g</li>
+        <li>슬라이스: 250g / 500g (우려내기 편한 형태)</li>
         <li>보관: 직사광선·습기를 피해 서늘한 곳</li>
       </ul>
     </section>
@@ -136,8 +135,8 @@
   <div class="container" data-reveal>
     <p class="eyebrow">Related</p>
     <h2 class="h-title">함께 보면 좋은 제품</h2>
-    <div class="product-grid" module="product_relation_1">
-      <!-- ##image_medium## ##product_name## ##product_sale_price## -->
+    <div class="product-grid" module="product_relation">
+      <!-- {$image_medium} {$product_name} {$product_sale_price} -->
     </div>
   </div>
 </section>

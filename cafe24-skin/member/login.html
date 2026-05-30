@@ -1,0 +1,48 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!-- 로그인 — 카페24 module=member_login -->
+
+<section class="page-head">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--c-gold);">Member</p>
+    <h1>로그인</h1>
+  </div>
+</section>
+
+<section class="section section--ivory">
+  <div class="container" style="max-width:480px;">
+
+    <div module="member_login">
+      <form action="/exec/front/Member/login/" method="post"
+            style="display:flex; flex-direction:column; gap:var(--space-4);">
+        <label>아이디
+          <input type="text" name="member_id" required
+                 style="width:100%;height:48px;padding:0 var(--space-3);border:1px solid var(--c-line);border-radius:var(--r-sm);font:inherit;margin-top:6px;" />
+        </label>
+        <label>비밀번호
+          <input type="password" name="passwd" required
+                 style="width:100%;height:48px;padding:0 var(--space-3);border:1px solid var(--c-line);border-radius:var(--r-sm);font:inherit;margin-top:6px;" />
+        </label>
+        <label style="display:flex; gap:8px; align-items:center; font-size:var(--fs-small);">
+          <input type="checkbox" name="save_id" value="T" /> 아이디 저장
+        </label>
+        <button type="submit" class="btn btn--primary btn--block">로그인</button>
+      </form>
+
+      <hr class="rule-brass" />
+
+      <div style="display:flex; gap:var(--space-3); justify-content:center; font-size:var(--fs-small);">
+        <a href="/member/join.html">회원가입</a>
+        <span style="color:var(--c-line);">·</span>
+        <a href="/member/find_id.html">아이디 찾기</a>
+        <span style="color:var(--c-line);">·</span>
+        <a href="/member/find_passwd.html">비밀번호 찾기</a>
+      </div>
+
+      <!-- 카카오 소셜로그인 (어드민 → 회원 → 소셜로그인 설정 후) -->
+      <div style="margin-top:var(--space-6); text-align:center;">
+        <p style="color:var(--c-text-mute); font-size:var(--fs-small);">또는 SNS 계정으로</p>
+        <div module="member_sociallogin" style="margin-top:var(--space-3);"></div>
+      </div>
+    </div>
+  </div>
+</section>

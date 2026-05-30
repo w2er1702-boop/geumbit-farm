@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  카페24 스마트디자인 스킨 메타정보.
+  어드민 → 디자인 → 스킨 관리 → 업로드 시 인식한다.
+-->
+<skin_information>
+  <name>금빛농원 GEUMBIT FARM</name>
+  <author>Geumbit Farm</author>
+  <version>1.0.0</version>
+  <description>금빛농원 자사몰 1차 MVP 풀커스텀 스킨. Mobile-First, Onyx·Gold·Walnut·Ivory 톤.</description>
+  <category>식품/건강</category>
+  <type>fullcustom</type>
+  <responsive>true</responsive>
+  <layout_default>/layout/basic/layout.html</layout_default>
+</skin_information>

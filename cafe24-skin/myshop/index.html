@@ -1,0 +1,27 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!-- 마이쇼핑 메인 — 카페24 module=mypage_main -->
+
+<section class="page-head">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--c-gold);">My Page</p>
+    <h1>마이쇼핑</h1>
+    <p>{$member_name}님, 환영합니다.</p>
+  </div>
+</section>
+
+<section class="section section--ivory">
+  <div class="container" style="max-width:1000px;">
+    <div module="mypage_main">
+      {$mypage_html}
+    </div>
+
+    <hr class="rule-brass" />
+
+    <ul style="display:grid; grid-template-columns:repeat(2, 1fr); gap:var(--space-3); list-style:none; padding:0;">
+      <li><a class="btn btn--ghost btn--block" href="/myshop/order/orderlist.html" style="color:var(--c-walnut);border-color:var(--c-line);">주문 내역</a></li>
+      <li><a class="btn btn--ghost btn--block" href="/myshop/wish_list.html" style="color:var(--c-walnut);border-color:var(--c-line);">찜한 상품</a></li>
+      <li><a class="btn btn--ghost btn--block" href="/myshop/board_list.html" style="color:var(--c-walnut);border-color:var(--c-line);">나의 게시글</a></li>
+      <li><a class="btn btn--ghost btn--block" href="/myshop/coupon_list.html" style="color:var(--c-walnut);border-color:var(--c-line);">쿠폰함</a></li>
+    </ul>
+  </div>
+</section>

@@ -1,6 +1,7 @@
+<!--@layout(/layout/basic/layout.html)-->
 <!-- =====================================================
      메인(홈)  — 설계서 §4.2  (8개 섹션)
-     이 파일은 layout.html의 ##content_html## 위치에 합쳐진다.
+     이 파일 본문은 layout.html의 {$layout_module_content} 위치에 주입된다.
      ===================================================== -->
 
 <!-- 1. 히어로 -->
@@ -17,7 +18,7 @@
     </p>
     <div class="hero__cta">
       <a class="btn btn--cta" href="/product/list.html?cate_no=24">제품 보기</a>
-      <a class="btn btn--ghost" href="/board/qna/">선물세트 문의</a>
+      <a class="btn btn--ghost" href="/board.html?board_no=6">선물세트 문의</a>
     </div>
   </div>
 </section>
@@ -38,19 +39,21 @@
     <h2 class="h-title">금빛농원의 다섯 가지 결</h2>
 
     <!--
-      module: product_listmain_1  — 카페24 어드민 "메인 상품 진열"로 연결
-      아래 카드 5개는 ##image_medium## ##product_name## ##product_price## 변수로 치환할 자리이며,
-      1차에서는 정적 마크업으로 톤만 잡아둔다. (5상품: 원물·슬라이스·혼합세트·진액·발효액)
+      module: product_listmain_1  — 카페24 어드민 "메인 상품 진열"에 연결.
+      카페24가 자동으로 반복 렌더링하므로 실제 운영 시에는 카드 1개만 두고
+      모듈 변수({$image_medium} {$product_name} 등)로 치환한다.
+      아래 5개 카드는 시각 확인용 placeholder다.
+      (1차 확정: 원물에 30g/100g/250g/500g 모두 옵션 통합 — M1·M2)
     -->
     <div class="product-grid" module="product_listmain_1">
       <a class="product-card" href="/product/detail.html?product_no=1">
         <div class="product-card__img"></div>
         <div class="product-card__body">
-          <span class="product-card__tag">국산 · 농장직송</span>
+          <span class="product-card__tag">30g · 100g · 250g · 500g</span>
           <h3 class="product-card__name">상황버섯 원물</h3>
           <div class="price">
-            <span class="price__list">125,000원</span>
-            <span class="price__sale">97,500<span class="unit">원~</span></span>
+            <span class="price__list">14,000원</span>
+            <span class="price__sale">12,000<span class="unit">원~</span></span>
           </div>
         </div>
       </a>

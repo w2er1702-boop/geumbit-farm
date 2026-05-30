@@ -1,0 +1,29 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!-- 장바구니 — 카페24 module=basket_action, basket_orderprice -->
+
+<section class="page-head">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--c-gold);">Cart</p>
+    <h1>장바구니</h1>
+  </div>
+</section>
+
+<section class="section section--ivory">
+  <div class="container">
+
+    <div module="basket_action">
+      {$basket_action_html}
+    </div>
+
+    <hr class="rule-brass" />
+
+    <div module="basket_orderprice" style="display:flex; justify-content:flex-end;">
+      {$orderprice_html}
+    </div>
+
+    <div style="display:flex; gap:var(--space-3); justify-content:flex-end; margin-top:var(--space-6);">
+      <a class="btn btn--ghost" href="/product/list.html?cate_no=24" style="color:var(--c-walnut);border-color:var(--c-line);">계속 쇼핑</a>
+      <button class="btn btn--cta" type="button" onclick="order_all();">주문하기</button>
+    </div>
+  </div>
+</section>

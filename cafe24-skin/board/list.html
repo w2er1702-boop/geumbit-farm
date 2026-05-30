@@ -1,3 +1,4 @@
+<!--@layout(/layout/basic/layout.html)-->
 <!-- =====================================================
      게시판 목록 — 공지·상품후기·1:1문의 공용 (§4.6)
      ===================================================== -->
@@ -5,7 +6,7 @@
 <section class="page-head">
   <div class="container">
     <p class="eyebrow" style="color:var(--c-gold);">Board</p>
-    <h1>##board_name##</h1>
+    <h1>{$board_name}</h1>
     <p>금빛농원의 소식과 고객의 목소리를 전합니다.</p>
   </div>
 </section>
@@ -15,13 +16,12 @@
 
     <div class="board-toolbar">
       <span style="color:var(--c-text-mute); font-size:var(--fs-small);">
-        총 <strong>##article_count##</strong>개
+        총 <strong>{$article_count}</strong>개
       </span>
-      <a class="btn btn--primary" href="##write_url##" style="min-height:40px; padding:0 var(--space-5);">글쓰기</a>
+      <a class="btn btn--primary" href="{$write_url}" style="min-height:40px; padding:0 var(--space-5);">글쓰기</a>
     </div>
 
-    <!-- module: board_listpackage_1 -->
-    <div module="board_listpackage_1">
+    <div module="board_listpackage">
       <table class="board-table">
         <thead>
           <tr>
@@ -33,20 +33,20 @@
           </tr>
         </thead>
         <tbody>
-          <!-- 카페24가 자동 반복 렌더링. 1차 placeholder 한 줄: -->
+          <!-- 카페24가 자동 반복 렌더링. 한 줄만 placeholder로. -->
           <tr>
-            <td>##num##</td>
-            <td><a href="##link##">##subject##</a></td>
-            <td>##writer##</td>
-            <td>##date##</td>
-            <td>##hits##</td>
+            <td>{$num}</td>
+            <td><a href="{$link}">{$subject}</a></td>
+            <td>{$writer}</td>
+            <td>{$date}</td>
+            <td>{$hits}</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="text-center" style="margin-top:var(--space-6);" module="board_paging_1">
-      ##paging##
+    <div class="text-center" style="margin-top:var(--space-6);" module="board_paging">
+      {$paging}
     </div>
 
   </div>

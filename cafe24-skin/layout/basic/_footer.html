@@ -1,16 +1,17 @@
 <!-- =====================================================
      Footer  (설계서 §4.1, §7.3 — 전자상거래 필수 표기)
+     변수 출처: 카페24 어드민 → 쇼핑몰 설정 → 내 쇼핑몰 정보
      ===================================================== -->
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="site-footer__grid">
 
       <div>
-        <h4>금빛농원 GEUMBIT FARM</h4>
-        <p>경기 연천, 한탄강 자락의 가족 농원.<br/>정성껏 기른 상황버섯을 금빛농원의 기준으로 귀하게 전합니다.</p>
+        <h4>{$mall_name}</h4>
+        <p>{$mall_description|default:'경기 연천, 한탄강 자락의 가족 농원. 정성껏 기른 상황버섯을 금빛농원의 기준으로 귀하게 전합니다.'}</p>
         <p style="margin-top:var(--space-4);">
-          고객센터 ##service_call_time## <br/>
-          전화 ##service_call## · 카카오톡 채널 @geumbitfarm
+          고객센터 {$customer_service_time}<br/>
+          전화 {$customer_service_tel} · 카카오톡 채널 @geumbitfarm
         </p>
       </div>
 
@@ -20,25 +21,25 @@
           <li><a href="/shopinfo/guide.html">쇼핑 가이드</a></li>
           <li><a href="/shopinfo/exchange.html">교환·반품</a></li>
           <li><a href="/shopinfo/delivery.html">배송 안내</a></li>
-          <li><a href="/board/qna/">1:1 문의</a></li>
+          <li><a href="/board.html?board_no=6">1:1 문의</a></li>
         </ul>
       </div>
 
       <div>
         <h4>약관 · 정책</h4>
         <ul>
-          <li><a href="/shopinfo/terms.html">이용약관</a></li>
-          <li><a href="/shopinfo/privacy.html">개인정보처리방침</a></li>
+          <li><a href="/shopinfo/agreement.html">이용약관</a></li>
+          <li><a href="/shopinfo/personal.html">개인정보처리방침</a></li>
           <li><a href="/shopinfo/refund.html">청약철회 기준</a></li>
         </ul>
       </div>
     </div>
 
-    <!--  전자상거래법 의무 표기 — 실제 값으로 치환 -->
+    <!-- 전자상거래법 의무 표기 (§7.3) -->
     <p class="legal">
-      상호: 금빛농원(한여울바이오밸리)  ·  대표자: ##ceo_name##  ·  사업자등록번호: ##business_no##  ·  통신판매업 신고: ##online_business_no##<br/>
-      주소: 경기도 연천군 ##address##  ·  전자우편: ##email##  ·  호스팅 제공자: (주)카페24<br/>
-      Copyright &copy; <span data-year>2026</span> GEUMBIT FARM. All rights reserved.
+      상호: {$company_name} · 대표자: {$president_name} · 사업자등록번호: {$company_number} · 통신판매업 신고: {$online_order_business_number}<br/>
+      주소: {$company_address} · 전자우편: {$email} · 호스팅 제공자: (주)카페24<br/>
+      Copyright &copy; <span data-year>2026</span> {$mall_name}. All rights reserved.
     </p>
   </div>
 </footer>

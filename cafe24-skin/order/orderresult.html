@@ -1,0 +1,23 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!-- 주문 완료 — 카페24 module=order_result -->
+
+<section class="page-head">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--c-gold);">Order Complete</p>
+    <h1>주문이 완료되었습니다</h1>
+    <p>{$mall_name}을 찾아주셔서 감사합니다. 주문하신 상품을 정성껏 준비해 보내드리겠습니다.</p>
+  </div>
+</section>
+
+<section class="section section--ivory">
+  <div class="container" style="max-width:880px;">
+    <div module="order_result">
+      {$orderresult_html}
+    </div>
+
+    <div style="display:flex; gap:var(--space-3); justify-content:center; margin-top:var(--space-7);">
+      <a class="btn btn--ghost" href="/" style="color:var(--c-walnut);border-color:var(--c-line);">홈으로</a>
+      <a class="btn btn--primary" href="/myshop/order/orderlist.html">주문 내역</a>
+    </div>
+  </div>
+</section>
