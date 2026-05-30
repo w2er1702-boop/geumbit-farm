@@ -258,11 +258,14 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 700; line-height: 1.25
 }
 .brand { display: inline-flex; align-items: center; gap: 12px; }
 .brand .brand-mark {
-  width: 38px; height: 38px; border-radius: 50%;
+  width: 44px; height: 44px; border-radius: 50%;
   display: grid; place-items: center;
-  border: 1px solid var(--gold); color: var(--gold-deep);
-  font-family: var(--font-serif); font-weight: 800; font-size: 1.1rem;
+  border: 1px solid var(--gold-pale);
+  background: var(--paper);
+  overflow: hidden;
 }
+.brand .brand-mark img { width: 30px; height: 30px; display: block; }
+.site-footer .brand .brand-mark { border-color: rgba(231,214,178,.35); background: rgba(231,214,178,.06); }
 .brand .brand-name { font-family: var(--font-serif); font-weight: 800; font-size: 1.22rem; letter-spacing: .04em; }
 .brand .brand-en { font-family: var(--font-display); font-style: italic; letter-spacing: .18em; font-size: .68rem; color: var(--ink-faint); text-transform: uppercase; display: block; margin-top: -2px; }
 
@@ -574,7 +577,6 @@ textarea.field { min-height: 140px; resize: vertical; }
 .site-footer { background: var(--ink-95); color: #C9BCA6; padding-block: clamp(50px, 7vw, 84px) 32px; position: relative; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: clamp(28px, 4vw, 56px); }
 .site-footer .brand .brand-name { color: var(--paper); }
-.site-footer .brand .brand-mark { border-color: var(--gold-soft); color: var(--gold-soft); }
 .footer-about { max-width: 32ch; font-size: .88rem; line-height: 1.8; margin-top: 18px; }
 .footer-col h4 { font-family: var(--font-sans); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 16px; font-weight: 700; }
 .footer-col ul { display: grid; gap: 10px; }
