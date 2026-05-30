@@ -6,6 +6,7 @@ geumbit-skin-*.zip
 *.log
 node_modules/
 
-# 시안 빌드 산출물은 트래킹 (검토용으로 사용)
-# preview/*.html
-# preview/*.png
+# 시안 빌드 산출물
+preview/site/
+preview/*.html
+preview/*.png
