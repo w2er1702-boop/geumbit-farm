@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import type { Locale } from '@/i18n';
@@ -62,22 +61,28 @@ export async function HeroSection({ locale }: Props) {
   );
 }
 
+// FIXME(unverified): hero 자산 부재로 CSS placeholder 표시. 운영주 촬영본 입수 후
+// next/image + /farm/hero.jpg 로 교체. (관련: public/farm/, app/[locale]/farm/page.tsx)
 function HeroImage() {
   return (
-    <div className="relative w-full h-full bg-[var(--color-charcoal)] overflow-hidden">
-      <Image
-        src="/farm/hero.jpg"
-        alt="Geumbit Farm Hero"
-        fill
-        priority
-        sizes="(min-width: 1024px) 33vw, 100vw"
-        className="object-cover"
-      />
+    <div
+      className="relative w-full h-full overflow-hidden"
+      style={{
+        background:
+          'radial-gradient(120% 80% at 20% 0%, var(--color-onyx-soft) 0%, var(--color-charcoal) 55%, var(--color-onyx) 100%)',
+      }}
+      aria-hidden="true"
+    >
       <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-        <span className="text-[120px] leading-none opacity-15 text-[var(--color-gold)] font-bold" style={{ fontFamily: "'Noto Serif SC', serif" }}>
+        <span
+          className="text-[140px] leading-none opacity-25 text-[var(--color-gold)] font-bold"
+          style={{ fontFamily: "'Noto Serif SC', serif" }}
+        >
           黃金
         </span>
-        <span className="mt-2 label-section text-[var(--color-gold)] opacity-50">HERO IMAGE</span>
+        <span className="mt-4 label-section text-[var(--color-gold)] opacity-50">
+          桑 黃
+        </span>
       </div>
     </div>
   );

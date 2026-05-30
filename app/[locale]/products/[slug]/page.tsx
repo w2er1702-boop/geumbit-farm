@@ -7,9 +7,12 @@ import { localePath } from '@/lib/navigation';
 import {
   formatPrice,
   getCategoryLabel,
+  getPriceMode,
   getProductBySlug,
+  getSmartstoreUrl,
   products,
 } from '@/lib/products';
+import { buildPageMetadata, getSiteUrl, pageUrl } from '@/lib/seo';
 import { BuyButton } from '@/components/BuyButton';
 import { ProductCard } from '@/components/ProductCard';
 import { ProductImage } from '@/components/ProductImage';
@@ -34,15 +37,13 @@ export async function generateMetadata({
   if (!product) return {};
 
   const loc = locale as Locale;
-  return {
+  return buildPageMetadata({
+    locale: loc,
+    path: `/products/${product.slug}`,
     title: product.name[loc],
     description: product.shortDesc[loc],
-    openGraph: {
-      title: product.name[loc],
-      description: product.shortDesc[loc],
-      images: [product.image],
-    },
-  };
+    ogImagePath: product.image,
+  });
 }
 
 export default async function ProductDetailPage({
@@ -61,6 +62,7 @@ export default async function ProductDetailPage({
   const t = await getTranslations({ locale, namespace: 'product' });
   const tCommon = await getTranslations({ locale, namespace: 'common' });
   const tActions = await getTranslations({ locale, namespace: 'actions' });
+  const tNav = await getTranslations({ locale, namespace: 'nav' });
 
   const name = product.name[locale];
   const desc = product.shortDesc[locale];
@@ -68,14 +70,17 @@ export default async function ProductDetailPage({
   const discount = Math.round(
     ((product.regularPrice - product.salePrice) / product.regularPrice) * 100
   );
+  const priceMode = getPriceMode();
+  const smartstoreUrl = getSmartstoreUrl(product);
 
   const related = products.filter((p) => p.slug !== product.slug).slice(0, 3);
   const relatedCards = await Promise.all(
     related.map((p) => ProductCard({ product: p, locale }))
   );
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://w2er1702-boop.github.io/geumbit-farm';
-  const jsonLd = {
+  const siteUrl = getSiteUrl();
+  const detailUrl = pageUrl(`/products/${product.slug}`, locale);
+  const productLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name,
@@ -89,7 +94,17 @@ export default async function ProductDetailPage({
       priceCurrency: 'KRW',
       price: product.salePrice,
       availability: 'https://schema.org/InStock',
+      url: smartstoreUrl,
     },
+  };
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: tNav('home'), item: pageUrl('/', locale) },
+      { '@type': 'ListItem', position: 2, name: tNav('products'), item: pageUrl('/products', locale) },
+      { '@type': 'ListItem', position: 3, name, item: detailUrl },
+    ],
   };
 
   return (
@@ -125,27 +140,38 @@ export default async function ProductDetailPage({
               <GoldRule className="my-8" />
 
               <div className="space-y-3">
-                <div className="flex items-baseline gap-3">
-                  <span className="label-section text-[var(--color-ink-muted)] w-16">
-                    {tCommon('regularPrice')}
-                  </span>
-                  <span className="price text-base text-[var(--color-ink-muted)] line-through">
-                    {formatPrice(product.regularPrice, locale)}
-                  </span>
-                </div>
-                <div className="flex items-baseline gap-3">
-                  <span className="label-section text-[var(--color-ink-muted)] w-16">
-                    {tCommon('salePrice')}
-                  </span>
-                  <span className="price text-3xl text-[var(--color-oxblood)] font-medium">
-                    {formatPrice(product.salePrice, locale)}
-                  </span>
-                  {discount > 0 && (
-                    <span className="label-section text-[var(--color-oxblood)]">
-                      -{discount}%
-                    </span>
-                  )}
-                </div>
+                {priceMode === 'show' ? (
+                  <>
+                    <div className="flex items-baseline gap-3">
+                      <span className="label-section text-[var(--color-ink-muted)] w-16">
+                        {tCommon('regularPrice')}
+                      </span>
+                      <span className="price text-base text-[var(--color-ink-muted)] line-through">
+                        {formatPrice(product.regularPrice, locale)}
+                      </span>
+                    </div>
+                    <div className="flex items-baseline gap-3">
+                      <span className="label-section text-[var(--color-ink-muted)] w-16">
+                        {tCommon('salePrice')}
+                      </span>
+                      <span className="price text-3xl text-[var(--color-oxblood)] font-medium">
+                        {formatPrice(product.salePrice, locale)}
+                      </span>
+                      {discount > 0 && (
+                        <span className="label-section text-[var(--color-oxblood)]">
+                          -{discount}%
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-xs text-[var(--color-ink-muted)] opacity-80">
+                      ※ {tCommon('priceNote')}
+                    </p>
+                  </>
+                ) : (
+                  <p className="text-base text-[var(--color-ink-muted)]">
+                    {tActions('checkPriceInStore')}
+                  </p>
+                )}
                 <div className="flex items-baseline gap-3">
                   <span className="label-section text-[var(--color-ink-muted)] w-16">
                     {tCommon('weight')}
@@ -216,7 +242,11 @@ export default async function ProductDetailPage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
     </>
   );

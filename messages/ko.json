@@ -9,10 +9,12 @@
   },
   "actions": {
     "buyNow": "구매하기",
+    "buyOnSmartstore": "네이버 스마트스토어에서 구매",
     "learnMore": "자세히 보기",
     "inquire": "문의하기",
     "viewAllProducts": "전체 상품 보기",
-    "brandStory": "브랜드 스토리"
+    "brandStory": "브랜드 스토리",
+    "checkPriceInStore": "스마트스토어에서 가격 확인"
   },
   "common": {
     "regularPrice": "정가",
@@ -21,7 +23,29 @@
     "category": "카테고리",
     "all": "전체",
     "comingSoon": "이미지 준비 중",
-    "relatedProducts": "관련 상품"
+    "relatedProducts": "관련 상품",
+    "priceNote": "표시 가격은 스마트스토어 기준입니다."
+  },
+  "a11y": {
+    "skipToContent": "본문으로 건너뛰기"
+  },
+  "seo": {
+    "homeTitle": "한탄강 자락의 황금상황버섯",
+    "homeDescription": "한탄강 자락 청정 재배지에서 참나무 원목 위 황금상황버섯을 길러온 금빛농원. 원물·슬라이스·진액·발효액 9종 라인업.",
+    "brandTitle": "브랜드 스토리",
+    "brandDescription": "운영 법인 한여울바이오밸리㈜의 품질 철학과 금빛농원이 걸어온 길.",
+    "productsTitle": "상품 · 황금상황버섯 9선",
+    "productsDescription": "원물·슬라이스·진액·발효액까지 한탄강의 시간이 담긴 황금상황버섯 라인업.",
+    "farmTitle": "농장 · 연천 한탄강",
+    "farmDescription": "현무암 협곡과 맑은 물이 흐르는 연천 한탄강의 청정 재배지.",
+    "certificationsTitle": "인증",
+    "certificationsDescription": "금빛농원이 보유한 인증서와 시험성적서.",
+    "contactTitle": "문의",
+    "contactDescription": "주문·도매·기타 문의를 위한 카카오톡·전화·이메일·스마트스토어 채널.",
+    "privacyTitle": "개인정보처리방침",
+    "privacyDescription": "한여울바이오밸리㈜의 개인정보 처리에 관한 안내.",
+    "termsTitle": "이용약관",
+    "termsDescription": "금빛농원 브랜드 사이트 이용약관."
   },
   "home": {
     "wordmark": "GEUMBIT FARM",
@@ -73,26 +97,60 @@
   "contact": {
     "title": "CONTACT",
     "subtitle": "문의하기",
-    "intro": "주문, 도매, 기타 문의는 아래 연락처로 부탁드립니다.",
-    "addressLabel": "주소",
-    "addressValue": "경기도 연천군 한탄강 인근 (정확 주소 추후 안내)",
+    "intro": "주문, 도매, 기타 문의는 아래 채널로 부탁드립니다. 일반 주문·배송 문의는 네이버 스마트스토어가 가장 빠릅니다.",
+    "channelsHeading": "문의 채널",
+    "kakaoLabel": "카카오톡 채널",
+    "kakaoHref": "",
+    "kakaoValue": "추후 안내",
     "phoneLabel": "전화",
+    "phoneHref": "",
     "phoneValue": "추후 안내",
     "emailLabel": "이메일",
+    "emailHref": "",
     "emailValue": "추후 안내",
-    "kakaoLabel": "카카오톡 채널",
-    "kakaoValue": "추후 안내",
+    "smartstoreLabel": "스마트스토어",
+    "smartstoreValue": "smartstore.naver.com/ycgoldenfarm",
+    "pendingValue": "추후 안내",
+    "ctaKakao": "카카오톡으로 문의",
+    "ctaCall": "전화 걸기",
+    "ctaEmail": "이메일 보내기",
+    "ctaSmartstore": "스마트스토어 바로가기",
+    "addressLabel": "주소",
+    "addressValue": "경기도 연천군 한탄강 인근 (정확 주소 추후 안내)",
     "businessLabel": "사업자 등록번호",
     "businessValue": "추후 안내",
     "ecommerceLabel": "통신판매업 신고번호",
-    "ecommerceValue": "추후 안내",
-    "smartstoreLabel": "스마트스토어",
-    "smartstoreValue": "naver.com/ycgoldenfarm"
+    "ecommerceValue": "추후 안내"
   },
   "footer": {
     "rights": "All rights reserved.",
     "tagline": "한탄강 자락의 황금상황버섯",
     "company": "한여울바이오밸리㈜",
-    "disclaimer": "본 사이트의 모든 제품은 일반 식품이며 의약품이 아닙니다."
+    "disclaimer": "본 사이트의 모든 제품은 일반 식품이며 의약품이 아닙니다.",
+    "legalHeading": "사업자 정보",
+    "ceoLabel": "대표자",
+    "ceoValue": "추후 안내",
+    "businessLabel": "사업자등록번호",
+    "businessValue": "추후 안내",
+    "ecommerceLabel": "통신판매업 신고번호",
+    "ecommerceValue": "추후 안내",
+    "addressLabel": "사업장 주소",
+    "addressValue": "경기도 연천군 한탄강 인근 (정확 주소 추후 안내)",
+    "phoneLabel": "전화",
+    "phoneValue": "추후 안내",
+    "emailLabel": "이메일",
+    "emailValue": "추후 안내",
+    "smartstoreLabel": "스마트스토어",
+    "openInNewTab": "(새 창에서 열림)",
+    "privacy": "개인정보처리방침",
+    "terms": "이용약관"
+  },
+  "legal": {
+    "privacyTitle": "개인정보처리방침",
+    "privacySubtitle": "Privacy Policy",
+    "privacyPlaceholder": "본 페이지는 준비 중입니다. 한여울바이오밸리㈜는 「개인정보 보호법」을 준수하며, 정식 방침이 확정되는 대로 이 자리에 게시할 예정입니다.",
+    "termsTitle": "이용약관",
+    "termsSubtitle": "Terms of Service",
+    "termsPlaceholder": "본 페이지는 준비 중입니다. 본 사이트는 한여울바이오밸리㈜의 브랜드·상품 소개 매체이며, 결제·배송은 네이버 스마트스토어에서 이루어집니다. 정식 약관이 확정되는 대로 이 자리에 게시할 예정입니다."
   }
 }

@@ -9,10 +9,12 @@
   },
   "actions": {
     "buyNow": "立即购买",
+    "buyOnSmartstore": "在Naver商店购买",
     "learnMore": "了解更多",
     "inquire": "咨询",
     "viewAllProducts": "查看全部产品",
-    "brandStory": "品牌故事"
+    "brandStory": "品牌故事",
+    "checkPriceInStore": "在Naver商店查看价格"
   },
   "common": {
     "regularPrice": "原价",
@@ -21,7 +23,29 @@
     "category": "分类",
     "all": "全部",
     "comingSoon": "图片准备中",
-    "relatedProducts": "相关产品"
+    "relatedProducts": "相关产品",
+    "priceNote": "所示价格以Naver商店为准。"
+  },
+  "a11y": {
+    "skipToContent": "跳至正文"
+  },
+  "seo": {
+    "homeTitle": "汉滩江畔的黄金桑黄",
+    "homeDescription": "金光农园于汉滩江畔的橡木原木上自然栽培黄金桑黄。原物、切片、进液、发酵液共九种产品系列。",
+    "brandTitle": "品牌故事",
+    "brandDescription": "运营公司韩如月生物谷株式会社的品质理念与金光农园走过的路。",
+    "productsTitle": "产品 · 桑黄九选",
+    "productsDescription": "从原物到进液与发酵液，汇聚汉滩江时光的黄金桑黄产品系列。",
+    "farmTitle": "农场 · 涟川汉滩江",
+    "farmDescription": "由玄武岩峡谷与清澈水源构成的涟川汉滩江清净产地。",
+    "certificationsTitle": "认证",
+    "certificationsDescription": "金光农园持有的认证证书与检验报告。",
+    "contactTitle": "联系",
+    "contactDescription": "订购、批发及其他咨询的KakaoTalk、电话、邮箱与Naver商店渠道。",
+    "privacyTitle": "隐私政策",
+    "privacyDescription": "韩如月生物谷株式会社的个人信息处理说明。",
+    "termsTitle": "使用条款",
+    "termsDescription": "金光农园品牌网站使用条款。"
   },
   "home": {
     "wordmark": "GEUMBIT FARM",
@@ -74,26 +98,60 @@
   "contact": {
     "title": "CONTACT",
     "subtitle": "联系我们",
-    "intro": "订购、批发及其他咨询，请通过以下方式联系我们。",
-    "addressLabel": "地址",
-    "addressValue": "京畿道涟川郡汉滩江附近（详细地址另行公布）",
+    "intro": "订购、批发及其他咨询，请通过以下渠道联系我们。订购与发货问题，Naver商店是最快的渠道。",
+    "channelsHeading": "联系渠道",
+    "kakaoLabel": "KakaoTalk 频道",
+    "kakaoHref": "",
+    "kakaoValue": "另行公布",
     "phoneLabel": "电话",
+    "phoneHref": "",
     "phoneValue": "另行公布",
     "emailLabel": "邮箱",
+    "emailHref": "",
     "emailValue": "另行公布",
-    "kakaoLabel": "KakaoTalk 频道",
-    "kakaoValue": "另行公布",
+    "smartstoreLabel": "Smartstore",
+    "smartstoreValue": "smartstore.naver.com/ycgoldenfarm",
+    "pendingValue": "另行公布",
+    "ctaKakao": "通过KakaoTalk咨询",
+    "ctaCall": "拨打电话",
+    "ctaEmail": "发送邮件",
+    "ctaSmartstore": "前往Naver商店",
+    "addressLabel": "地址",
+    "addressValue": "京畿道涟川郡汉滩江附近（详细地址另行公布）",
     "businessLabel": "营业执照号",
     "businessValue": "另行公布",
     "ecommerceLabel": "通信销售业申报号",
-    "ecommerceValue": "另行公布",
-    "smartstoreLabel": "Smartstore",
-    "smartstoreValue": "naver.com/ycgoldenfarm"
+    "ecommerceValue": "另行公布"
   },
   "footer": {
     "rights": "All rights reserved.",
     "tagline": "汉滩江畔的黄金桑黄。",
     "company": "韩如月生物谷株式会社",
-    "disclaimer": "本网站所有产品均为一般食品，并非药品。"
+    "disclaimer": "本网站所有产品均为一般食品，并非药品。",
+    "legalHeading": "企业信息",
+    "ceoLabel": "代表",
+    "ceoValue": "另行公布",
+    "businessLabel": "营业执照号",
+    "businessValue": "另行公布",
+    "ecommerceLabel": "通信销售业申报号",
+    "ecommerceValue": "另行公布",
+    "addressLabel": "营业地址",
+    "addressValue": "京畿道涟川郡汉滩江附近（详细地址另行公布）",
+    "phoneLabel": "电话",
+    "phoneValue": "另行公布",
+    "emailLabel": "邮箱",
+    "emailValue": "另行公布",
+    "smartstoreLabel": "Smartstore",
+    "openInNewTab": "（新窗口打开）",
+    "privacy": "隐私政策",
+    "terms": "使用条款"
+  },
+  "legal": {
+    "privacyTitle": "隐私政策",
+    "privacySubtitle": "Privacy Policy",
+    "privacyPlaceholder": "本页面正在准备中。韩如月生物谷株式会社遵守《个人信息保护法》，正式方针确定后将在此处发布。",
+    "termsTitle": "使用条款",
+    "termsSubtitle": "Terms of Service",
+    "termsPlaceholder": "本页面正在准备中。本网站为韩如月生物谷株式会社的品牌与产品介绍媒体，结算与发货通过 Naver Smartstore 进行。正式条款确定后将在此处发布。"
   }
 }

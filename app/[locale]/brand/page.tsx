@@ -1,13 +1,31 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import brandData from '@/data/brand.json';
 import { isLocale, locales, type Locale } from '@/i18n';
+import { buildPageMetadata } from '@/lib/seo';
 import { Section, Container, SectionLabel } from '@/components/Section';
 import { GoldRule } from '@/components/GoldRule';
 import { VerticalHanjaAccent } from '@/components/VerticalHanjaAccent';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const t = await getTranslations({ locale, namespace: 'seo' });
+  return buildPageMetadata({
+    locale: locale as Locale,
+    path: '/brand',
+    title: t('brandTitle'),
+    description: t('brandDescription'),
+  });
 }
 
 export default async function BrandPage({
@@ -24,6 +42,7 @@ export default async function BrandPage({
 
   const company = brandData.company[locale];
   const brandName = brandData.brandName[locale];
+  // TODO(copy): story[2]는 운영주 인터뷰 확정 후 정식 카피로 교체 (data/brand.json)
   const story = brandData.story[locale];
   const principles = brandData.principles;
 

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import type { Locale } from '@/i18n';
 import { localePath } from '@/lib/navigation';
-import { formatPrice, getCategoryLabel, type Product } from '@/lib/products';
+import { formatPrice, getCategoryLabel, getPriceMode, type Product } from '@/lib/products';
 import { ProductImage } from './ProductImage';
 
 type Props = {
@@ -18,6 +18,7 @@ export async function ProductCard({ product, locale, featured = false }: Props) 
   const name = product.name[locale];
   const desc = product.shortDesc[locale];
   const category = getCategoryLabel(product.category, locale);
+  const priceMode = getPriceMode();
 
   return (
     <Link
@@ -39,12 +40,20 @@ export async function ProductCard({ product, locale, featured = false }: Props) 
         <p className="text-sm text-[var(--color-ink-muted)] line-clamp-2">{desc}</p>
 
         <div className="mt-auto pt-3 flex items-baseline gap-3">
-          <span className="price text-xs text-[var(--color-ink-muted)] line-through">
-            {formatPrice(product.regularPrice, locale)}
-          </span>
-          <span className="price text-base text-[var(--color-oxblood)] font-medium">
-            {formatPrice(product.salePrice, locale)}
-          </span>
+          {priceMode === 'show' ? (
+            <>
+              <span className="price text-xs text-[var(--color-ink-muted)] line-through">
+                {formatPrice(product.regularPrice, locale)}
+              </span>
+              <span className="price text-base text-[var(--color-oxblood)] font-medium">
+                {formatPrice(product.salePrice, locale)}
+              </span>
+            </>
+          ) : (
+            <span className="text-sm text-[var(--color-ink-muted)]">
+              {t('checkPriceInStore')}
+            </span>
+          )}
         </div>
 
         <div className="pt-3 flex items-center justify-between border-t border-[var(--color-rule)]">

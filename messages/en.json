@@ -9,10 +9,12 @@
   },
   "actions": {
     "buyNow": "Buy Now",
+    "buyOnSmartstore": "Buy on Naver Smartstore",
     "learnMore": "Learn More",
     "inquire": "Inquire",
     "viewAllProducts": "View All Products",
-    "brandStory": "Brand Story"
+    "brandStory": "Brand Story",
+    "checkPriceInStore": "Check price on Smartstore"
   },
   "common": {
     "regularPrice": "List",
@@ -21,7 +23,29 @@
     "category": "Category",
     "all": "All",
     "comingSoon": "Image coming soon",
-    "relatedProducts": "Related Products"
+    "relatedProducts": "Related Products",
+    "priceNote": "Prices shown reflect the Smartstore listing."
+  },
+  "a11y": {
+    "skipToContent": "Skip to content"
+  },
+  "seo": {
+    "homeTitle": "Golden sanghwang of the Hantangang",
+    "homeDescription": "Geumbit Farm cultivates golden sanghwang on oak logs along the pristine Hantangang River. Nine selections — whole, sliced, extract, fermented.",
+    "brandTitle": "Brand Story",
+    "brandDescription": "The quality philosophy of Hanyeoul Bio Valley Co., Ltd. and the path Geumbit Farm has walked.",
+    "productsTitle": "Products · Nine Sanghwang Selections",
+    "productsDescription": "From whole material to extracts and fermented liquid — a lineup imbued with the time of the Hantangang.",
+    "farmTitle": "Farm · Yeoncheon Hantangang",
+    "farmDescription": "A pristine growing region of basalt gorges and clear waters along the Hantangang River in Yeoncheon.",
+    "certificationsTitle": "Certifications",
+    "certificationsDescription": "Certificates and test reports held by Geumbit Farm.",
+    "contactTitle": "Contact",
+    "contactDescription": "KakaoTalk, phone, email, and Smartstore channels for orders, wholesale and other inquiries.",
+    "privacyTitle": "Privacy Policy",
+    "privacyDescription": "How Hanyeoul Bio Valley Co., Ltd. handles personal information.",
+    "termsTitle": "Terms of Service",
+    "termsDescription": "Terms of service for the Geumbit Farm brand site."
   },
   "home": {
     "wordmark": "GEUMBIT FARM",
@@ -73,26 +97,60 @@
   "contact": {
     "title": "CONTACT",
     "subtitle": "Get in Touch",
-    "intro": "For orders, wholesale, and other inquiries, please reach us at the channels below.",
+    "intro": "For orders, wholesale, and other inquiries, please reach us through the channels below. For order and shipping questions, the Naver Smartstore is the fastest route.",
+    "channelsHeading": "Channels",
+    "kakaoLabel": "KakaoTalk Channel",
+    "kakaoHref": "",
+    "kakaoValue": "TBA",
+    "phoneLabel": "Phone",
+    "phoneHref": "",
+    "phoneValue": "TBA",
+    "emailLabel": "Email",
+    "emailHref": "",
+    "emailValue": "TBA",
+    "smartstoreLabel": "Smartstore",
+    "smartstoreValue": "smartstore.naver.com/ycgoldenfarm",
+    "pendingValue": "TBA",
+    "ctaKakao": "Message on KakaoTalk",
+    "ctaCall": "Call",
+    "ctaEmail": "Send Email",
+    "ctaSmartstore": "Go to Smartstore",
+    "addressLabel": "Address",
+    "addressValue": "Near the Hantangang River, Yeoncheon-gun, Gyeonggi-do (full address TBA)",
+    "businessLabel": "Business Registration No.",
+    "businessValue": "TBA",
+    "ecommerceLabel": "E-commerce License No.",
+    "ecommerceValue": "TBA"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "tagline": "Golden sanghwang of the Hantangang.",
+    "company": "Hanyeoul Bio Valley Co., Ltd.",
+    "disclaimer": "All products on this site are general foods, not medicines.",
+    "legalHeading": "Business Information",
+    "ceoLabel": "Representative",
+    "ceoValue": "TBA",
+    "businessLabel": "Business Registration No.",
+    "businessValue": "TBA",
+    "ecommerceLabel": "E-commerce License No.",
+    "ecommerceValue": "TBA",
     "addressLabel": "Address",
     "addressValue": "Near the Hantangang River, Yeoncheon-gun, Gyeonggi-do (full address TBA)",
     "phoneLabel": "Phone",
     "phoneValue": "TBA",
     "emailLabel": "Email",
     "emailValue": "TBA",
-    "kakaoLabel": "KakaoTalk Channel",
-    "kakaoValue": "TBA",
-    "businessLabel": "Business Registration No.",
-    "businessValue": "TBA",
-    "ecommerceLabel": "E-commerce License No.",
-    "ecommerceValue": "TBA",
     "smartstoreLabel": "Smartstore",
-    "smartstoreValue": "naver.com/ycgoldenfarm"
+    "openInNewTab": "(opens in a new tab)",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
   },
-  "footer": {
-    "rights": "All rights reserved.",
-    "tagline": "Golden sanghwang of the Hantangang.",
-    "company": "Hanyeoul Bio Valley Co., Ltd.",
-    "disclaimer": "All products on this site are general foods, not medicines."
+  "legal": {
+    "privacyTitle": "Privacy Policy",
+    "privacySubtitle": "Privacy Policy",
+    "privacyPlaceholder": "This page is being prepared. Hanyeoul Bio Valley Co., Ltd. complies with Korea's Personal Information Protection Act and will publish its full policy here once finalized.",
+    "termsTitle": "Terms of Service",
+    "termsSubtitle": "Terms of Service",
+    "termsPlaceholder": "This page is being prepared. This site introduces brand and products of Hanyeoul Bio Valley Co., Ltd.; payment and shipping are handled through the Naver Smartstore. Full terms will be published here once finalized."
   }
 }

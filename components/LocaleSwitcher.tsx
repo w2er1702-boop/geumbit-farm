@@ -10,19 +10,17 @@ const labels: Record<Locale, string> = {
   zh: '中',
 };
 
-function stripBasePath(pathname: string): string {
-  if (typeof window === 'undefined') return pathname;
-  return pathname;
-}
-
+// Next.js usePathname() returns a path without basePath. Because pages live under
+// app/[locale]/, the client router treats the default locale (ko) as a real URL
+// segment even though scripts/postbuild.mjs moves /out/ko/* to root at build time.
+// We therefore strip *every* locale prefix — including ko — so the switcher
+// never produces nested segments like /en/ko/brand.
 function pathWithoutLocale(pathname: string): string {
-  const clean = stripBasePath(pathname);
   for (const loc of locales) {
-    if (loc === defaultLocale) continue;
-    if (clean === `/${loc}`) return '/';
-    if (clean.startsWith(`/${loc}/`)) return clean.slice(`/${loc}`.length);
+    if (pathname === `/${loc}`) return '/';
+    if (pathname.startsWith(`/${loc}/`)) return pathname.slice(`/${loc}`.length);
   }
-  return clean || '/';
+  return pathname || '/';
 }
 
 function buildHref(basePath: string, locale: Locale): string {

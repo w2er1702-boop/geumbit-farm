@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -5,11 +6,28 @@ import brandData from '@/data/brand.json';
 import { isLocale, type Locale } from '@/i18n';
 import { localePath } from '@/lib/navigation';
 import { getFeaturedProducts } from '@/lib/products';
+import { buildPageMetadata } from '@/lib/seo';
 import { HeroSection } from '@/components/HeroSection';
 import { ProductCard } from '@/components/ProductCard';
 import { Section, Container, SectionLabel } from '@/components/Section';
 import { GoldRule } from '@/components/GoldRule';
 import { VerticalHanjaAccent } from '@/components/VerticalHanjaAccent';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const t = await getTranslations({ locale, namespace: 'seo' });
+  return buildPageMetadata({
+    locale: locale as Locale,
+    path: '/',
+    title: t('homeTitle'),
+    description: t('homeDescription'),
+  });
+}
 
 export default async function HomePage({
   params,

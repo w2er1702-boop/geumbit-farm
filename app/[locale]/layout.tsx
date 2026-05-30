@@ -1,8 +1,7 @@
-import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale, getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import {
   Noto_Serif_KR,
   Noto_Sans_KR,
@@ -15,6 +14,8 @@ import {
 import { locales, isLocale, type Locale } from '@/i18n';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { Analytics } from '@/components/Analytics';
+import { getSiteUrl } from '@/lib/seo';
 
 const notoSerifKr = Noto_Serif_KR({
   subsets: ['latin'],
@@ -74,40 +75,6 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  if (!isLocale(locale)) return {};
-
-  const t = await getTranslations({ locale, namespace: 'home' });
-  const tFooter = await getTranslations({ locale, namespace: 'footer' });
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://w2er1702-boop.github.io/geumbit-farm';
-
-  const titleByLocale: Record<Locale, string> = {
-    ko: '금빛농원 · GEUMBIT FARM',
-    en: 'GEUMBIT FARM · 금빛농원',
-    zh: '金光农园 · GEUMBIT FARM',
-  };
-
-  return {
-    metadataBase: new URL(siteUrl),
-    title: { default: titleByLocale[locale as Locale], template: `%s · ${titleByLocale[locale as Locale]}` },
-    description: t('heroSlogan'),
-    openGraph: {
-      title: titleByLocale[locale as Locale],
-      description: t('heroSlogan'),
-      images: ['/og-default.jpg'],
-      siteName: titleByLocale[locale as Locale],
-      type: 'website',
-    },
-    twitter: { card: 'summary_large_image' },
-    other: { company: tFooter('company') },
-  };
-}
-
 const htmlLangMap: Record<Locale, string> = { ko: 'ko', en: 'en', zh: 'zh-CN' };
 
 export default async function LocaleLayout({
@@ -122,6 +89,19 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = await getMessages();
+  const tA11y = await getTranslations({ locale, namespace: 'a11y' });
+  const tFooter = await getTranslations({ locale, namespace: 'footer' });
+
+  const siteUrl = getSiteUrl();
+  const organizationLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'GEUMBIT FARM',
+    legalName: tFooter('company'),
+    url: siteUrl,
+    logo: `${siteUrl}/og-default.svg`,
+    sameAs: ['https://smartstore.naver.com/ycgoldenfarm'],
+  };
 
   return (
     <html lang={htmlLangMap[locale]} className={fontVariables}>
@@ -132,11 +112,21 @@ export default async function LocaleLayout({
         />
       </head>
       <body className="bg-[var(--color-parchment)] text-[var(--color-ink)] antialiased">
+        <a href="#main" className="skip-link">
+          {tA11y('skipToContent')}
+        </a>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header locale={locale} />
-          <main className="min-h-[60vh]">{children}</main>
+          <main id="main" className="min-h-[60vh]">
+            {children}
+          </main>
           <Footer locale={locale} />
         </NextIntlClientProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
+        />
+        <Analytics />
       </body>
     </html>
   );

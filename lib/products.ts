@@ -14,6 +14,8 @@ export interface Product {
   image: string;
   naverProductNo: string;
   sixshopSlug: string;
+  /** 운영주가 확인한 상품별 스마트스토어 URL. 비어 있으면 메인 스토어 URL로 fallback. */
+  smartstoreUrl?: string;
   featured?: boolean;
 }
 
@@ -25,6 +27,27 @@ export function getProductBySlug(slug: string): Product | undefined {
 
 export function getFeaturedProducts(): Product[] {
   return products.filter((p) => p.featured);
+}
+
+const NAVER_STORE_BASE =
+  process.env.NEXT_PUBLIC_NAVER_STORE_URL || 'https://smartstore.naver.com/ycgoldenfarm';
+
+/**
+ * Resolve the buy URL for a product. Precedence:
+ *  1) Per-product smartstoreUrl set in data/products.json
+ *  2) `${NAVER_STORE_BASE}/products/${naverProductNo}`
+ *  3) NAVER_STORE_BASE alone (last-resort fallback)
+ */
+export function getSmartstoreUrl(product: Product): string {
+  if (product.smartstoreUrl) return product.smartstoreUrl;
+  if (product.naverProductNo) return `${NAVER_STORE_BASE}/products/${product.naverProductNo}`;
+  return NAVER_STORE_BASE;
+}
+
+export type PriceMode = 'show' | 'hide';
+
+export function getPriceMode(): PriceMode {
+  return process.env.NEXT_PUBLIC_PRICE_MODE === 'hide' ? 'hide' : 'show';
 }
 
 export function getCategoryLabel(category: ProductCategory, locale: Locale): string {
